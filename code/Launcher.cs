@@ -6,7 +6,6 @@ public sealed class Launcher : Component
 	[Property, Range( 0, 2 )] public float DirectionRandomness { get; set; } = 0.5f;
 	[Property] public float LaunchSpeed { get; set; } = 20f;
 	[Property] public float LaunchSpin { get; set; } = 2f;
-	private TimeSince _lastLaunchTime = 0f;
 
 	protected override void DrawGizmos()
 	{
@@ -14,15 +13,6 @@ public sealed class Launcher : Component
 		var lineEnd = Transform.Position + Transform.Rotation.Forward * LaunchSpeed;
 		Gizmo.Draw.Line( Transform.Position, lineEnd );
 		Gizmo.Draw.LineSphere( new Sphere( lineEnd, 10f ) );
-	}
-
-	protected override void OnUpdate()
-	{
-		if ( _lastLaunchTime > 1f )
-		{
-			Launch();
-			_lastLaunchTime = 0f;
-		}
 	}
 
 	public void Launch()

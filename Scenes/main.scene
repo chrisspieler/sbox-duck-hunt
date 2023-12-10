@@ -10,14 +10,19 @@
           "__type": "Gun",
           "__enabled": true,
           "BoltSound": "sfx/mosin_bolt.sound",
-          "FireRate": 1,
+          "FireRate": 0.4,
           "HitRadius": 5,
           "ShotSound": "sfx/mosin_shot.sound"
         },
         {
           "__type": "GameState",
           "__enabled": true,
-          "GameHud": "fca348b1-cb0a-4f1b-987c-cdc0245beca9"
+          "ComboMultiplierBonus": 0.1,
+          "GameHud": "fca348b1-cb0a-4f1b-987c-cdc0245beca9",
+          "MaxCombo": 5,
+          "MaxGameTime": 60,
+          "MaxLaunchDelay": 3.5,
+          "MinLaunchDelay": 1
         }
       ],
       "Children": [
@@ -250,16 +255,14 @@
         },
         {
           "__type": "Hud",
-          "__enabled": true,
-          "DucksHunted": 0,
-          "Points": 0
+          "__enabled": true
         }
       ]
     },
     {
       "Id": "db052927-01e1-42de-b067-7e9e1b372130",
       "Name": "Main Camera",
-      "Position": "-300,0,150.9456",
+      "Position": "-212.6738,0,150.9456",
       "Enabled": true,
       "Components": [
         {
@@ -386,7 +389,26 @@
     {
       "Id": "7ab0a68b-2fac-4b98-b847-2e90ebc9fe6c",
       "Name": "pine_shrub_wide",
-      "Position": "298.8596,137.3081,5",
+      "Position": "295.7423,173.5803,5.000035",
+      "Rotation": "-0.00000002578274,-0.0000000000000002981994,-0.4325626,0.9016039",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/shrubs/pine/pine_shrub_wide.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "9eb04f29-e354-48a0-be07-f37e13ccb5a9",
+      "Name": "pine_shrub_wide (1)",
+      "Position": "438.2159,82.50644,4.999934",
+      "Rotation": "-0.00000005252214,-0.000000000000009775788,-0.8811751,-0.4727903",
       "Enabled": true,
       "Components": [
         {
@@ -420,7 +442,7 @@
     {
       "Id": "bf766ceb-77ea-4663-b8bc-d0a2bc635224",
       "Name": "tree_oak_small_a",
-      "Position": "396.7662,255.9428,5",
+      "Position": "396.7662,336.8101,5",
       "Enabled": true,
       "Components": [
         {
@@ -461,10 +483,112 @@
         {
           "__type": "Launcher",
           "__enabled": true,
-          "DirectionRandomness": 0.2,
-          "LaunchSpeed": 600,
+          "DirectionRandomness": 0.3,
+          "LaunchSpeed": 700,
           "LaunchSpin": 10,
           "Prefab": "181a69ae-da1e-4597-86b6-41c859a8905e"
+        }
+      ]
+    },
+    {
+      "Id": "4bb8766f-59d8-45ec-b5d4-76ae6ccaf534",
+      "Name": "Duck Launcher (1)",
+      "Position": "486.5473,287.6922,18.57164",
+      "Rotation": "-0.7060673,-0.03833086,-0.6400012,0.3006621",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Launcher",
+          "__enabled": true,
+          "DirectionRandomness": 0.3,
+          "LaunchSpeed": 700,
+          "LaunchSpin": 10,
+          "Prefab": "181a69ae-da1e-4597-86b6-41c859a8905e"
+        }
+      ]
+    },
+    {
+      "Id": "6354a2a9-837f-4b16-bdb7-d1b3e492b81c",
+      "Name": "pine_shrub_tall_b",
+      "Position": "420.8202,157.0236,5.000018",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/shrubs/pine/pine_shrub_tall_b.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "5b66af12-5ea5-410b-8c8c-70e48849384c",
+      "Name": "grass_clump_a",
+      "Position": "443.2575,-12.47775,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/nature/grass_clumps/grass_clump_a.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "a5aeca49-4d76-4bd7-8fd3-207cb412ebe5",
+      "Name": "grass_clump_b",
+      "Position": "407.0678,62.29543,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/nature/grass_clumps/grass_clump_b.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "9064344a-d288-4341-a399-dbed50d2dc8b",
+      "Name": "pine_bush_regular_c",
+      "Position": "485.5316,4.514618,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/shrubs/pine/pine_bush_regular_c.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "5eba1bc4-33dc-4e98-984e-1ae1aea3d7ee",
+      "Name": "bush_large_spread",
+      "Position": "633.4498,-14.88501,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/rust_nature/overgrowth/bush_large_spread.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
         }
       ]
     }
@@ -483,6 +607,10 @@
   "__references": [
     "duccsoft.duck_decoration",
     "facepunch.beech_shrub_wide_small",
+    "facepunch.grass_clump_a",
+    "facepunch.grass_clump_b",
+    "facepunch.pine_bush_regular_c",
+    "facepunch.pine_shrub_tall_b",
     "facepunch.pine_shrub_wide",
     "facepunch.tree_oak_big_b",
     "facepunch.tree_oak_small_a",

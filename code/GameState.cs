@@ -1,26 +1,111 @@
 using Sandbox;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public sealed class GameState : Component
 {
 	public static GameState Instance { get; private set; }
 
 	[Property] public Hud GameHud { get; set; }
+	[Property] public float MaxGameTime { get; set; } = 99f;
+	[Property] public float MinLaunchDelay { get; set; } = 1f;
+	[Property] public float MaxLaunchDelay { get; set; } = 3.5f;
+	[Property] public int MaxCombo { get; set; } = 5;
+	[Property] public float ComboMultiplierBonus { get; set; } = 0.1f;
+	public float ComboMultiplier => 1f + MathF.Min( MaxCombo, Combo ) * ComboMultiplierBonus;
 	public int Points { get; private set; }
+	public int DucksHunted { get; private set; }
+	public int CurrentSessionGameCount { get; private set; } = 0;
+	public int Combo { get; private set; } = 0;
+	public float GameTime { get; private set; } = 0f;
+	public bool IsGameActive { get; private set; } = false;
+	public int HighestCombo { get; private set; }
+	public int ShotsFired { get; private set; }
+	public int MissedShots { get; private set; }
+	public float Accuracy => ShotsFired == 0 ? 0f : 1f - (float)MissedShots / ShotsFired;
+
+	private List<Launcher> _launchers = new();
+	private TimeUntil _nextLaunch;
 
 	public GameState()
 	{
 		Instance = this;
 	}
 
+	protected override void OnStart()
+	{
+		_launchers = Scene.GetAllComponents<Launcher>().ToList();
+	}
+
+	protected override void OnUpdate()
+	{
+		if ( !IsGameActive )
+			return;
+
+		GameTime -= Time.Delta;
+		GameTime = MathF.Max( GameTime, 0f );
+		if ( GameTime == 0f )
+		{
+			IsGameActive = false;
+		}
+
+		if ( !_nextLaunch )
+			return;
+
+		var launcher = _launchers.OrderBy( _ => Guid.NewGuid() ).First();
+		launcher.Launch();
+		_nextLaunch = Game.Random.Float( MinLaunchDelay, MaxLaunchDelay );
+	}
+
+	public void StartGame()
+	{
+		CurrentSessionGameCount++;
+		IsGameActive = true;
+		GameTime = MaxGameTime;
+		Combo = 0;
+		HighestCombo = 0;
+		Points = 0;
+		DucksHunted = 0;
+		ShotsFired = 0;
+		MissedShots = 0;
+		_nextLaunch = Game.Random.Float( MinLaunchDelay, MaxLaunchDelay );
+	}
+
+	public void EndGame()
+	{
+		IsGameActive = false;
+	}
+
 	public void AddPoints( int points )
 	{
 		Points += Math.Max( 0, points );
-		GameHud.Points = Points;
+	}
+
+	public void RemovePoints( int points )
+	{
+		Points -= Math.Max( 0, points );
+		Points = Math.Max( 0, Points );
 	}
 
 	public void OnDuckShot()
 	{
-		GameHud.DucksHunted++;
+		DucksHunted++;
+		int pointsAwarded = (int)( 25f * ComboMultiplier );
+		AddPoints( pointsAwarded );
+		Combo++;
+		if ( Combo > HighestCombo )
+		{
+			HighestCombo = Combo;
+		}
+		ShotsFired++;
+	}
+
+	public void OnMissedShot()
+	{
+		Combo = 0;
+		RemovePoints( 20 );
+		MissedShots++;
+		ShotsFired++;
 	}
 }

@@ -3,24 +3,49 @@
 @inherits PanelComponent
 
 <root>
-    <div id="statsBox">
-        <p>Points: @Points</p>
-        <p>Ducks Hunted: @DucksHunted</p>
-    </div>
-    <div @ref=Crosshair class="crosshair"></div>
+    @if ( !GameState.Instance.IsGameActive )
+    {
+        <div id="shadowBox">
+            <div id="mainTitle">Duck Hunt</div>
+            @if ( GameState.Instance.CurrentSessionGameCount > 0 )
+            {
+                <div id="gameOverTitle">Game Over</div>
+                <div id="lastGameStatsBox">
+                    <p>Points: @GameState.Instance.Points</p>
+                    <p>Ducks Hunted: @GameState.Instance.DucksHunted</p>
+                    <p>Shots Missed: @GameState.Instance.MissedShots</p>
+                    <p>Accuracy: @($"{GameState.Instance.Accuracy * 100:F2}%"</p>
+                    <p>Highest Combo: @GameState.Instance.HighestCombo</p>
+                </div>
+            }
+            <button id="startGameButton" @onclick=@(() => GameState.Instance.StartGame())>Start Game</button>
+        </div>
+    }
+    else
+    {
+        <div id="timerBox">
+            <p>@TimeRemaining</p>
+        </div>
+        <div id="statsBox">
+            <p>Multiplier: @ComboMultiplier</p>
+            <p>Points: @GameState.Instance.Points</p>
+            <p>Ducks Hunted: @GameState.Instance.DucksHunted</p>
+        </div>
+        <div @ref=Crosshair class="crosshair"></div>
+    }
 </root>
 
 @code
 {
-    [Property] public int Points { get; set; } = 0;
-    [Property] public int DucksHunted { get; set; } = 0;
+    public string TimeRemaining => $"{GameState.Instance.GameTime:F0}";
+    public string ComboMultiplier => $"{GameState.Instance.ComboMultiplier:F2}x";
 
     private Panel Crosshair { get; set; }
 
     /// <summary>
     /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
     /// </summary>
-    protected override int BuildHash() => System.HashCode.Combine( Points, DucksHunted );
+    protected override int BuildHash() => System.HashCode.Combine( GameState.Instance.Points, GameState.Instance.DucksHunted, TimeRemaining, GameState.Instance.IsGameActive );
 
     protected override void OnUpdate()
     {

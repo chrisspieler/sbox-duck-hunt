@@ -40,9 +40,12 @@ public sealed class Gun : Component
 			breakable.Break();
 			if ( tr.GameObject.Tags.Has( "target" ) )
 			{
-				GameState.Instance.AddPoints( 25 );
 				GameState.Instance.OnDuckShot();
 			}
+		}
+		else
+		{
+			GameState.Instance.OnMissedShot();
 		}
 	}
 }
