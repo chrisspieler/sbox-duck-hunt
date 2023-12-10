@@ -1,0 +1,36 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    <div id="statsBox">
+        <p>Points: @Points</p>
+        <p>Ducks Hunted: @DucksHunted</p>
+    </div>
+    <div @ref=Crosshair class="crosshair"></div>
+</root>
+
+@code
+{
+    [Property] public int Points { get; set; } = 0;
+    [Property] public int DucksHunted { get; set; } = 0;
+
+    private Panel Crosshair { get; set; }
+
+    /// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine( Points, DucksHunted );
+
+    protected override void OnUpdate()
+    {
+        if ( Crosshair is null )
+            return;
+
+        var screenSize = Screen.Size;
+        var normalizedMousePosition = Mouse.Position / screenSize;
+
+        Crosshair.Style.Left = Length.Percent( normalizedMousePosition.x * 100f );
+        Crosshair.Style.Top = Length.Percent(normalizedMousePosition.y * 100f );
+    }
+}

@@ -1,0 +1,42 @@
+Hud
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+
+	#statsBox {
+		position: absolute;
+		flex-direction: column;
+		background-color: rgba(0, 0, 0, 0.5);
+		left: 25px;
+		bottom: 25px;
+		padding: 20px;
+
+		> p {
+			color: white;
+			font-size: 28px;
+			font-family: Poppins;
+		}
+	}
+
+	.title
+	{
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+	}
+
+	.crosshair {
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		background-color: white;
+		border-radius: 50%;
+	}
+}
