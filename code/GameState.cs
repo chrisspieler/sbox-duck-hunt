@@ -25,6 +25,13 @@ public sealed class GameState : Component
 	public int ShotsFired { get; private set; }
 	public int MissedShots { get; private set; }
 	public float Accuracy => ShotsFired == 0 ? 0f : 1f - (float)MissedShots / ShotsFired;
+	public bool GotPersonalBestPoints { get; private set; } = false;
+	public bool GotPersonalBestDucksHunted { get; private set; } = false;
+	public bool GotPersonalBestCombo { get; private set; } = false;
+	public DuckStats Stats { get; private set; }
+
+	public event Action GameStarted;
+	public event Action GameOver;
 
 	private List<Launcher> _launchers = new();
 	private TimeUntil _nextLaunch;
@@ -37,6 +44,7 @@ public sealed class GameState : Component
 	protected override void OnStart()
 	{
 		_launchers = Scene.GetAllComponents<Launcher>().ToList();
+		Stats = DuckStats.Load();
 	}
 
 	protected override void OnUpdate()
@@ -44,11 +52,16 @@ public sealed class GameState : Component
 		if ( !IsGameActive )
 			return;
 
+		if ( Input.EscapePressed )
+		{
+			GameTime = 0f;
+		}
+
 		GameTime -= Time.Delta;
 		GameTime = MathF.Max( GameTime, 0f );
 		if ( GameTime == 0f )
 		{
-			IsGameActive = false;
+			EndGame();
 		}
 
 		if ( !_nextLaunch )
@@ -61,6 +74,7 @@ public sealed class GameState : Component
 
 	public void StartGame()
 	{
+		Stats.TotalGamesPlayed++;
 		CurrentSessionGameCount++;
 		IsGameActive = true;
 		GameTime = MaxGameTime;
@@ -71,11 +85,29 @@ public sealed class GameState : Component
 		ShotsFired = 0;
 		MissedShots = 0;
 		_nextLaunch = Game.Random.Float( MinLaunchDelay, MaxLaunchDelay );
+		GameStarted?.Invoke();
 	}
 
 	public void EndGame()
 	{
 		IsGameActive = false;
+		GotPersonalBestPoints = Points > Stats.HighestPoints;
+		if ( GotPersonalBestPoints )
+		{
+			Stats.HighestPoints = Points;
+		}
+		GotPersonalBestDucksHunted = DucksHunted > Stats.HighestDucksHunted;
+		if ( GotPersonalBestDucksHunted )
+		{
+			Stats.HighestDucksHunted = DucksHunted;
+		}
+		GotPersonalBestCombo = HighestCombo > Stats.HighestCombo;
+		if ( GotPersonalBestCombo )
+		{
+			Stats.HighestCombo = HighestCombo;
+		}
+		Stats.Save();
+		GameOver?.Invoke();
 	}
 
 	public void AddPoints( int points )

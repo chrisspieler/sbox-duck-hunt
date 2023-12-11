@@ -45,25 +45,71 @@ Hud {
 
 		> #gameOverTitle {
 			position: absolute;
-			top: 275px;
+			top: 280px;
 			color: white;
 			font-size: 72px;
 			font-family: Poppins;
+		}
+
+		> #highScoreText {
+			position: absolute;
+            top: 325px;
+            color: yellow;
+			text-shadow: 0px 0px 5px 5px yellow;
+			text-stroke: 4px black;
+            font-size: 42px;
+            font-family: Poppins;
 		}
 
 		> #lastGameStatsBox {
 			position: absolute;
 			top: 400px;
 			padding: 50px;
+			width: 475px;
 			background-color: rgba(0, 0, 0, 0.9);
 			border-radius: 20px;
 			flex-direction: column;
 			color: white;
 			font-size: 36px;
 			font-family: Poppins;
+
+			.row {
+                align-items: center;
+				justify-content: space-between;
+
+				.special {
+					color: yellow;
+				}
+
+				.pb {
+					position: absolute;
+					left: 120%;
+					font-size: 28px;
+				}
+			}
+
+			.hr {
+				height: 2px;
+				width: 100%;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				background-color: #FFF1;
+			}
 		}
 
+		#breatheText {
+			position: absolute;
+			bottom: 200px;
+			font-size: 28px;
+			font-family: Poppins;
+			color: #FFFA;
+			transform: scale(1.35);
+			transition: all 1s ease-out;
 
+			&:intro {
+				transform: scale(0.4);
+			}
+		}
 
 		> button {
 			position: absolute;

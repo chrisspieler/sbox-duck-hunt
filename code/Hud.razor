@@ -11,14 +11,50 @@
             {
                 <div id="gameOverTitle">Game Over</div>
                 <div id="lastGameStatsBox">
-                    <p>Points: @GameState.Instance.Points</p>
-                    <p>Ducks Hunted: @GameState.Instance.DucksHunted</p>
-                    <p>Shots Missed: @GameState.Instance.MissedShots</p>
-                    <p>Accuracy: @($"{GameState.Instance.Accuracy * 100:F2}%"</p>
-                    <p>Highest Combo: @GameState.Instance.HighestCombo</p>
+                    <div class="row">
+                        <p class="label">Points:</p>
+                        <p class="value @(GameState.Instance.GotPersonalBestPoints ? "special" : "")">@GameState.Instance.Points</p>
+                        @if (GameState.Instance.GotPersonalBestPoints)
+                        {
+                            <p class="pb special">New personal best!</p>
+                        }
+                    </div>
+                    <div class="row">
+                        <p class="label">Ducks Hunted:</p>
+                        <p class="value @(GameState.Instance.GotPersonalBestDucksHunted ? "special" : "")">@GameState.Instance.DucksHunted</p>
+                        @if ( GameState.Instance.GotPersonalBestDucksHunted )
+                        {
+                            <p class="pb special">New personal best!</p>
+                        }
+                    </div>
+                    <div class="row">
+                        <p class="label">Highest Combo:</p>
+                        <p class="value @(GameState.Instance.GotPersonalBestCombo ? "special" : "")">@GameState.Instance.HighestCombo</p>
+                        @if (GameState.Instance.GotPersonalBestCombo)
+                        {
+                            <p class="pb special">New personal best!</p>
+                        }
+                    </div>
+                    <div class="row hr"/>
+                    <div class="row">
+                        <p class="label">Shots Missed:</p>
+                        <p class="value">@GameState.Instance.MissedShots</p>
+                    </div>
+                    <div class="row">
+                        <p class="label">Accuracy:</p>
+                        <p class="value">@($"{GameState.Instance.Accuracy * 100:F2}%"</p>
+                    </div>
+
                 </div>
             }
-            <button id="startGameButton" @onclick=@(() => GameState.Instance.StartGame())>Start Game</button>
+            @if ( ShouldShowStartButton )
+            {
+                <button id="startGameButton" @onclick=@(() => GameState.Instance.StartGame())>Start Game</button>
+            }
+            else
+            {
+                <p id="breatheText">Take a deep breath...</p>
+            }
         </div>
     }
     else
@@ -40,12 +76,30 @@
     public string TimeRemaining => $"{GameState.Instance.GameTime:F0}";
     public string ComboMultiplier => $"{GameState.Instance.ComboMultiplier:F2}x";
 
+
     private Panel Crosshair { get; set; }
+    private bool ShouldShowStartButton => GameState.Instance.CurrentSessionGameCount < 1 || _sinceGameOver > 1f;
+    private TimeSince _sinceGameOver;
 
     /// <summary>
     /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
     /// </summary>
-    protected override int BuildHash() => System.HashCode.Combine( GameState.Instance.Points, GameState.Instance.DucksHunted, TimeRemaining, GameState.Instance.IsGameActive );
+    protected override int BuildHash() => System.HashCode.Combine( 
+        GameState.Instance.Points, 
+        GameState.Instance.DucksHunted, 
+        TimeRemaining, 
+        GameState.Instance.IsGameActive,
+        ShouldShowStartButton,
+        GameState.Instance.GotPersonalBestPoints
+    );
+
+    protected override void OnEnabled()
+    {
+        base.OnEnabled();
+
+        GameState.Instance.GameOver += () => _sinceGameOver = 0f;
+    }
+
 
     protected override void OnUpdate()
     {
