@@ -13,6 +13,7 @@ public sealed class GameState : Component
 	[Property] public float MaxLaunchDelay { get; set; } = 3.5f;
 	[Property] public int MaxCombo { get; set; } = 5;
 	[Property] public float ComboMultiplierBonus { get; set; } = 0.1f;
+	[Property] public GameObject FloatingScorePrefab { get; set; }
 	public float ComboMultiplier => 1f + MathF.Min( MaxCombo, Combo ) * ComboMultiplierBonus;
 	public int Points { get; private set; }
 	public int DucksHunted { get; private set; }
@@ -88,24 +89,53 @@ public sealed class GameState : Component
 		Points = Math.Max( 0, Points );
 	}
 
-	public void OnDuckShot()
+	public void OnDuckShot( Vector3 position )
 	{
 		DucksHunted++;
 		int pointsAwarded = (int)( 25f * ComboMultiplier );
 		AddPoints( pointsAwarded );
 		Combo++;
+		if ( Combo == MaxCombo )
+		{
+			SpawnFloatingText( "Max Combo!", "positive", position + Vector3.Down * 18, 0.75f );
+		}
 		if ( Combo > HighestCombo )
 		{
 			HighestCombo = Combo;
 		}
 		ShotsFired++;
+		SpawnScoreText( pointsAwarded, position );
 	}
 
-	public void OnMissedShot()
+	public void OnMissedShot( Vector3 position )
 	{
+		if ( Combo > 1 )
+		{
+			SpawnFloatingText( "Combo Dropped!", "negative", position + Vector3.Down * 18, 0.75f );
+		}
 		Combo = 0;
 		RemovePoints( 20 );
 		MissedShots++;
 		ShotsFired++;
+		SpawnScoreText( -20, position );
+		
+	}
+
+	private void SpawnScoreText( int points, Vector3 position )
+	{
+		var sign = points > 0 ? "+" : "";
+		var textClass = points > 0 ? "positive" : "negative";
+		SpawnFloatingText( $"{sign}{points}", textClass, position );
+	}
+
+	private void SpawnFloatingText( string text, string textClass, Vector3 position, float scale = 1f )
+	{
+		var floatingScore = SceneUtility.Instantiate( FloatingScorePrefab, position );
+		floatingScore.Enabled = true;
+		floatingScore.Transform.Scale = scale;
+		var scoreText = floatingScore.Components.Get<FloatingScoreText>();
+		scoreText.Text = text;
+		scoreText.TextClass = textClass;
+		scoreText.StartPosition = position;
 	}
 }

@@ -40,12 +40,13 @@ public sealed class Gun : Component
 			breakable.Break();
 			if ( tr.GameObject.Tags.Has( "target" ) )
 			{
-				GameState.Instance.OnDuckShot();
+				GameState.Instance.OnDuckShot( breakable.Transform.Position );
 			}
 		}
 		else
 		{
-			GameState.Instance.OnMissedShot();
+			var hitPosition = aimRay.Project( 750f );
+			GameState.Instance.OnMissedShot( hitPosition );
 		}
 	}
 }
