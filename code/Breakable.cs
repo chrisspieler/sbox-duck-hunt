@@ -24,6 +24,12 @@ public sealed class Breakable : Component
 		if ( BreakDebris is not null )
 		{
 			var debris = SceneUtility.Instantiate( BreakDebris, Transform.World );
+			var rb = Components.Get<PhysicsComponent>();
+			if ( rb is not null )
+			{
+				var particleEffect = debris.Components.Get<ParticleEffect>( FindMode.EverythingInSelfAndChildren );
+				particleEffect.ForceDirection = rb.Velocity.WithZ( rb.Velocity.z - 800f );
+			}
 			debris.Enabled = true;
 		}
 		GameObject.Destroy();

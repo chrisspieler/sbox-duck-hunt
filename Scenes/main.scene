@@ -108,14 +108,16 @@
                   "ApplyRotation": true,
                   "ApplyShape": true,
                   "Bounce": {
-                    "Constants": "0.05,0,0,0"
+                    "Constants": "0.01,0,0,0"
                   },
                   "Brightness": {
                     "Constants": "1,0,0,0"
                   },
-                  "Bumpiness": {},
+                  "Bumpiness": {
+                    "Constants": "0.8,0,0,0"
+                  },
                   "Collision": true,
-                  "CollisionIgnore": null,
+                  "CollisionIgnore": "particle",
                   "CollisionRadius": 1,
                   "Damping": {},
                   "DieOnCollisionChance": {
@@ -123,7 +125,7 @@
                     "Constants": "0.2,0,0,0"
                   },
                   "Force": true,
-                  "ForceDirection": "0,0,-800",
+                  "ForceDirection": "0,0,0",
                   "ForceScale": {
                     "Type": "Range",
                     "Evaluation": "Particle",
