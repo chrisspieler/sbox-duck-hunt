@@ -13,8 +13,55 @@ Hud {
 		position: absolute;
         top: 25px;
         color: white;
+		text-stroke: 10px black;
         font-size: 128px;
-        font-family: Poppins;
+        font-family: 'Comic Sans MS';
+	}
+
+	#ducksHuntedBox {
+		position: absolute;
+		left: 25px;
+		bottom: 25px;
+	}
+
+	#pointsBox {
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+		flex-direction: column;
+
+		.tab {
+			background-color: #FFF;
+			left: 70px;
+			width: 50%;
+			height: 65px;
+			border-radius: 20px 20px 0px 0px;
+			justify-content: center;
+			align-items: center;
+			font-size: 36px;
+			font-family: Poppins;
+			border-top: 2px;
+			border-left: 3px;
+			border-right: 5px;
+			border-color: black;
+		}
+    }
+
+	.statBox {
+		background-color: #000D;
+		backdrop-filter: blur(5px);
+		width: 275px;
+		padding: 10px 0px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 20px;
+
+		p {
+			margin: 10px;
+			color: white;
+            font-size: 48px;
+            font-family: Poppins;
+		}
 	}
 
 	#statsBox {
@@ -49,16 +96,6 @@ Hud {
 			color: white;
 			font-size: 72px;
 			font-family: Poppins;
-		}
-
-		> #highScoreText {
-			position: absolute;
-            top: 325px;
-            color: yellow;
-			text-shadow: 0px 0px 5px 5px yellow;
-			text-stroke: 4px black;
-            font-size: 42px;
-            font-family: Poppins;
 		}
 
 		> #lastGameStatsBox {
@@ -137,8 +174,8 @@ Hud {
 	#timerBox {
 		position: absolute;
 		top: 25px;
-		width: 150px;
-		height: 100px;
+		width: 200px;
+		height: 80px;
 		background-color: rgba( 0, 0, 0, 0.9);
 		border-radius: 20%;
 		justify-content: center;
@@ -148,6 +185,7 @@ Hud {
 			color: white;
 			font-size: 42px;
 			font-family: Poppins;
+			margin: 10px;
 		}
 	}
 

@@ -1,4 +1,4 @@
-@using Sandbox;
+﻿@using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
 
@@ -60,12 +60,21 @@
     else
     {
         <div id="timerBox">
+            <p>⏱</p>
             <p>@TimeRemaining</p>
         </div>
-        <div id="statsBox">
-            <p>Multiplier: @ComboMultiplier</p>
-            <p>Points: @GameState.Instance.Points</p>
-            <p>Ducks Hunted: @GameState.Instance.DucksHunted</p>
+        <div id="ducksHuntedBox" class="statBox">
+            <p>🦆</p>
+            <p>@GameState.Instance.DucksHunted</p>
+        </div>
+        <div id="pointsBox">
+            <div class="tab">
+                <p>@(ComboMultiplier)</p>
+            </div>
+            <div class="statBox">
+                <p>🏅</p>
+                <p>@GameState.Instance.Points</p>
+            </div>
         </div>
         <div @ref=Crosshair class="crosshair"></div>
     }
