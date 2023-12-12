@@ -18,258 +18,12 @@
           "__type": "GameState",
           "__enabled": true,
           "ComboMultiplierBonus": 0.1,
-          "FloatingScorePrefab": "1b43247e-5d7a-4f89-a74b-2991cc3e7ef2",
+          "FloatingScorePrefab": "prefabs/floatingscore.prefab",
           "GameHud": "fca348b1-cb0a-4f1b-987c-cdc0245beca9",
           "MaxCombo": 5,
           "MaxGameTime": 60,
           "MaxLaunchDelay": 3.5,
           "MinLaunchDelay": 1
-        }
-      ],
-      "Children": [
-        {
-          "Id": "181a69ae-da1e-4597-86b6-41c859a8905e",
-          "Name": "Model Duck",
-          "Position": "0,0,0",
-          "Scale": "2.1,2.1,2.1",
-          "Tags": "target",
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": null,
-              "Model": "models/duck_decoration/duck_decoration.vmdl",
-              "ShouldCastShadows": true,
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "PhysicsComponent",
-              "__enabled": true,
-              "Gravity": true
-            },
-            {
-              "__type": "ModelCollider",
-              "__enabled": true,
-              "IsTrigger": false,
-              "Model": "models/duck_decoration/duck_decoration.vmdl",
-              "Static": false,
-              "Surface": null
-            },
-            {
-              "__type": "Breakable",
-              "__enabled": true,
-              "BreakDebris": "2ec4f239-5576-4a6a-98af-14580ffe01c6",
-              "BreakSound": "sfx/duck_break.sound"
-            },
-            {
-              "__type": "SelfDestruct",
-              "__enabled": true,
-              "Delay": 2
-            }
-          ]
-        },
-        {
-          "Id": "2ec4f239-5576-4a6a-98af-14580ffe01c6",
-          "Name": "Model Explosion",
-          "Position": "0,0,0",
-          "Components": [
-            {
-              "__type": "SelfDestruct",
-              "__enabled": true,
-              "Delay": 2
-            }
-          ],
-          "Children": [
-            {
-              "Id": "9b373d62-c404-4ecf-a55c-7f996d0d3fde",
-              "Name": "Burst",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "ParticleEffect",
-                  "__enabled": true,
-                  "Alpha": {
-                    "Type": "Curve",
-                    "CurveA": [
-                      {
-                        "y": 1
-                      },
-                      {
-                        "x": 1,
-                        "in": 2.5833337,
-                        "out": -2.5833337
-                      }
-                    ],
-                    "Constants": "1,0,0,0"
-                  },
-                  "ApplyColor": true,
-                  "ApplyRotation": true,
-                  "ApplyShape": true,
-                  "Bounce": {
-                    "Constants": "0.01,0,0,0"
-                  },
-                  "Brightness": {
-                    "Constants": "1,0,0,0"
-                  },
-                  "Bumpiness": {
-                    "Constants": "0.8,0,0,0"
-                  },
-                  "Collision": true,
-                  "CollisionIgnore": "particle",
-                  "CollisionRadius": 1,
-                  "Damping": {},
-                  "DieOnCollisionChance": {
-                    "Evaluation": "Particle",
-                    "Constants": "0.2,0,0,0"
-                  },
-                  "Force": true,
-                  "ForceDirection": "0,0,0",
-                  "ForceScale": {
-                    "Type": "Range",
-                    "Evaluation": "Particle",
-                    "Constants": "0.8,1.2,0,0"
-                  },
-                  "Friction": {
-                    "Constants": "1,0,0,0"
-                  },
-                  "Gradient": {
-                    "Type": "Range",
-                    "Evaluation": "Particle",
-                    "GradientA": {
-                      "color": [
-                        {
-                          "t": 0.5,
-                          "c": "1,1,1,1"
-                        }
-                      ],
-                      "alpha": []
-                    },
-                    "GradientB": {
-                      "color": [
-                        {
-                          "t": 0.5,
-                          "c": "1,1,1,1"
-                        }
-                      ],
-                      "alpha": []
-                    },
-                    "ConstantA": "0,0,0,1",
-                    "ConstantB": "0.14327,0.14356,0.12864,1"
-                  },
-                  "Lifetime": {
-                    "Constants": "2,0,0,0"
-                  },
-                  "MaxParticles": 1000,
-                  "PerParticleTimeScale": {
-                    "Constants": "1,0,0,0"
-                  },
-                  "PreWarm": 0,
-                  "PushStrength": {},
-                  "Roll": {
-                    "Type": "Range",
-                    "Evaluation": "Particle",
-                    "CurveA": [
-                      {
-                        "x": 0.5,
-                        "y": 0.5
-                      }
-                    ],
-                    "Constants": "0,1,0,0"
-                  },
-                  "Scale": {
-                    "Type": "Range",
-                    "Evaluation": "Particle",
-                    "Constants": "1,3,0,0"
-                  },
-                  "SequenceId": {},
-                  "SequenceSpeed": {
-                    "Constants": "1,0,0,0"
-                  },
-                  "SequenceTime": {
-                    "Constants": "1,0,0,0"
-                  },
-                  "SheetSequence": false,
-                  "Space": "World",
-                  "StartVelocity": {
-                    "Type": "Range",
-                    "Evaluation": "Particle",
-                    "Constants": "0,200,0,0"
-                  },
-                  "Stretch": {
-                    "Type": "Range",
-                    "Evaluation": "Particle",
-                    "Constants": "0,0.5,0,0"
-                  },
-                  "TimeScale": 1,
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "ParticleSphereEmitter",
-                  "__enabled": true,
-                  "Burst": 136.96,
-                  "Delay": 0,
-                  "Duration": 2,
-                  "Loop": true,
-                  "OnEdge": true,
-                  "Radius": 2.95,
-                  "Rate": 0,
-                  "Velocity": 100
-                },
-                {
-                  "__type": "ParticleSpriteRenderer",
-                  "__enabled": true,
-                  "Additive": false,
-                  "BlurAmount": 0.5,
-                  "BlurOpacity": 0.5,
-                  "BlurSpacing": 0.5,
-                  "DepthFeather": 0,
-                  "FaceVelocity": false,
-                  "FogStrength": 1,
-                  "LeadingTrail": true,
-                  "MotionBlur": false,
-                  "Opaque": false,
-                  "RotationOffset": 0,
-                  "Scale": 1,
-                  "Shadows": true,
-                  "SortMode": "Unsorted",
-                  "Texture": "materials/particle/snow.vtex"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Id": "1b43247e-5d7a-4f89-a74b-2991cc3e7ef2",
-          "Name": "Model Score",
-          "Position": "0,0,0",
-          "Components": [
-            {
-              "__type": "WorldPanel",
-              "__enabled": true,
-              "HorizontalAlign": "Center",
-              "LookAtCamera": true,
-              "PanelSize": "4096,1024",
-              "RenderScale": 1,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "FloatingScoreText",
-              "__enabled": true,
-              "FadeInStart": 0.25,
-              "FloatAwayDistance": 75,
-              "FloatAwayTime": 1.5,
-              "StartPosition": "0,0,0",
-              "Text": "\u002B25",
-              "TextClass": ""
-            },
-            {
-              "__type": "SelfDestruct",
-              "__enabled": true,
-              "Delay": 1.5
-            }
-          ]
         }
       ]
     },
@@ -366,6 +120,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
@@ -396,6 +151,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/rust_nature/overgrowth/bush_large_spread.vmdl",
           "ShouldCastShadows": true,
@@ -413,6 +169,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/rust_nature/bush_willow/bush_willow_b.vmdl",
           "ShouldCastShadows": true,
@@ -431,6 +188,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/shrubs/pine/pine_shrub_wide.vmdl",
           "ShouldCastShadows": true,
@@ -449,6 +207,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/shrubs/pine/pine_shrub_wide.vmdl",
           "ShouldCastShadows": true,
@@ -466,6 +225,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/shrubs/beech/beech_shrub_wide_small.vmdl",
           "ShouldCastShadows": true,
@@ -483,6 +243,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/trees/oak/tree_oak_small_a.vmdl",
           "ShouldCastShadows": true,
@@ -500,6 +261,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/trees/oak/tree_oak_big_b.vmdl",
           "ShouldCastShadows": true,
@@ -520,7 +282,7 @@
           "DirectionRandomness": 0.3,
           "LaunchSpeed": 700,
           "LaunchSpin": 10,
-          "Prefab": "181a69ae-da1e-4597-86b6-41c859a8905e"
+          "Prefab": "prefabs/target_duck.prefab"
         }
       ]
     },
@@ -537,7 +299,7 @@
           "DirectionRandomness": 0.3,
           "LaunchSpeed": 700,
           "LaunchSpin": 10,
-          "Prefab": "181a69ae-da1e-4597-86b6-41c859a8905e"
+          "Prefab": "prefabs/target_duck.prefab"
         }
       ]
     },
@@ -551,6 +313,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/shrubs/pine/pine_shrub_tall_b.vmdl",
           "ShouldCastShadows": true,
@@ -568,6 +331,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/nature/grass_clumps/grass_clump_a.vmdl",
           "ShouldCastShadows": true,
@@ -585,6 +349,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/nature/grass_clumps/grass_clump_b.vmdl",
           "ShouldCastShadows": true,
@@ -602,6 +367,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/shrubs/pine/pine_bush_regular_c.vmdl",
           "ShouldCastShadows": true,
@@ -619,6 +385,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/rust_nature/overgrowth/bush_large_spread.vmdl",
           "ShouldCastShadows": true,
@@ -628,18 +395,17 @@
     }
   ],
   "SceneProperties": {
+    "NetworkFrequency": 60,
     "Lerping": true,
     "UseFixedUpdate": true,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "MaxFixedUpdates": 5,
-    "FixedUpdateFrequency": 50,
-    "NetworkFrequency": 60
+    "FixedUpdateFrequency": 50
   },
   "Title": "Main",
   "Description": "",
   "__references": [
-    "duccsoft.duck_decoration",
     "facepunch.beech_shrub_wide_small",
     "facepunch.grass_clump_a",
     "facepunch.grass_clump_b",

@@ -1,0 +1,53 @@
+{
+  "RootObject": {
+    "Id": "181a69ae-da1e-4597-86b6-41c859a8905e",
+    "Name": "Model Duck",
+    "Position": "0,0,0",
+    "Scale": "2.1,2.1,2.1",
+    "Tags": "target",
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/duck_decoration/duck_decoration.vmdl",
+        "ShouldCastShadows": true,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "PhysicsComponent",
+        "__enabled": true,
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0
+      },
+      {
+        "__type": "ModelCollider",
+        "__enabled": true,
+        "IsTrigger": false,
+        "Model": "models/duck_decoration/duck_decoration.vmdl",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "Breakable",
+        "__enabled": true,
+        "BreakDebris": "prefabs/particle_shatterduck.prefab",
+        "BreakSound": "sfx/duck_break.sound"
+      },
+      {
+        "__type": "SelfDestruct",
+        "__enabled": true,
+        "Delay": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "duccsoft.duck_decoration"
+  ]
+}
