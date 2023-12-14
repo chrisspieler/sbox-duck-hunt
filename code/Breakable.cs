@@ -24,7 +24,7 @@ public sealed class Breakable : Component
 		if ( BreakDebris is not null )
 		{
 			var debris = SceneUtility.Instantiate( BreakDebris, Transform.World );
-			var rb = Components.Get<PhysicsComponent>();
+			var rb = Components.Get<Rigidbody>();
 			if ( rb is not null )
 			{
 				var particleEffect = debris.Components.Get<ParticleEffect>( FindMode.EverythingInSelfAndChildren );

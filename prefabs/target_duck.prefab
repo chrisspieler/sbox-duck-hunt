@@ -1,8 +1,7 @@
 {
   "RootObject": {
     "Id": "181a69ae-da1e-4597-86b6-41c859a8905e",
-    "Name": "Model Duck",
-    "Position": "0,0,0",
+    "Name": "target_duck",
     "Scale": "2.1,2.1,2.1",
     "Tags": "target",
     "Components": [
@@ -17,7 +16,7 @@
         "Tint": "1,1,1,1"
       },
       {
-        "__type": "PhysicsComponent",
+        "__type": "Rigidbody",
         "__enabled": true,
         "AngularDamping": 0,
         "Gravity": true,

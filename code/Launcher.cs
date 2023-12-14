@@ -22,7 +22,7 @@ public sealed class Launcher : Component
 
 		var go = SceneUtility.Instantiate( Prefab, Transform.World );
 		go.Enabled = true;
-		var rb = go.Components.GetOrCreate<PhysicsComponent>();
+		var rb = go.Components.GetOrCreate<Rigidbody>();
 		var randomDirection = (Transform.Rotation.Forward + Vector3.Random * DirectionRandomness).Normal;
 		rb.Velocity = randomDirection * LaunchSpeed;
 		rb.AngularVelocity = Vector3.Random * LaunchSpin;
