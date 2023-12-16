@@ -1,4 +1,5 @@
 using Sandbox;
+using Sandbox.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ public sealed class GameState : Component
 	public bool GotPersonalBestPoints { get; private set; } = false;
 	public bool GotPersonalBestDucksHunted { get; private set; } = false;
 	public bool GotPersonalBestCombo { get; private set; } = false;
-	public DuckStats Stats { get; private set; }
+	public DuckStats OfflineStats { get; private set; }
 
 	public event Action GameStarted;
 	public event Action GameOver;
@@ -44,7 +45,7 @@ public sealed class GameState : Component
 	protected override void OnStart()
 	{
 		_launchers = Scene.GetAllComponents<Launcher>().ToList();
-		Stats = DuckStats.Load();
+		OfflineStats = DuckStats.Load();
 	}
 
 	protected override void OnUpdate()
@@ -74,7 +75,7 @@ public sealed class GameState : Component
 
 	public void StartGame()
 	{
-		Stats.TotalGamesPlayed++;
+		OfflineStats.TotalGamesPlayed++;
 		CurrentSessionGameCount++;
 		IsGameActive = true;
 		GameTime = MaxGameTime;
@@ -91,22 +92,26 @@ public sealed class GameState : Component
 	public void EndGame()
 	{
 		IsGameActive = false;
-		GotPersonalBestPoints = Points > Stats.HighestPoints;
+		Stats.SetValue( "score", Points );
+		GotPersonalBestPoints = Points > OfflineStats.HighestPoints;
 		if ( GotPersonalBestPoints )
 		{
-			Stats.HighestPoints = Points;
+			OfflineStats.HighestPoints = Points;
 		}
-		GotPersonalBestDucksHunted = DucksHunted > Stats.HighestDucksHunted;
+		Stats.SetValue( "ducks-hunted", DucksHunted );
+		GotPersonalBestDucksHunted = DucksHunted > OfflineStats.HighestDucksHunted;
 		if ( GotPersonalBestDucksHunted )
 		{
-			Stats.HighestDucksHunted = DucksHunted;
+			OfflineStats.HighestDucksHunted = DucksHunted;
 		}
-		GotPersonalBestCombo = HighestCombo > Stats.HighestCombo;
+		Stats.SetValue( "highest-combo", HighestCombo );
+		GotPersonalBestCombo = HighestCombo > OfflineStats.HighestCombo;
 		if ( GotPersonalBestCombo )
 		{
-			Stats.HighestCombo = HighestCombo;
+			OfflineStats.HighestCombo = HighestCombo;
 		}
-		Stats.Save();
+		OfflineStats.Save();
+		Stats.Flush();
 		GameOver?.Invoke();
 	}
 
