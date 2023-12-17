@@ -2,7 +2,13 @@ using Sandbox;
 
 public sealed class Breakable : Component
 {
+	/// <summary>
+	/// A sound that plays when this object breaks.
+	/// </summary>
 	[Property] public SoundEvent BreakSound { get; set; }
+	/// <summary>
+	/// A prefab that spawns when this object breaks.
+	/// </summary>
 	[Property] public GameObject BreakDebris { get; set; }
 
 	protected override void OnEnabled()
