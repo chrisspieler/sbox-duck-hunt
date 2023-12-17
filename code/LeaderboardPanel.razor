@@ -1,0 +1,77 @@
+﻿@using System;
+@using System.Threading.Tasks;
+@using System.Collections.Generic;
+@using Sandbox;
+@using Sandbox.Services;
+@using Sandbox.UI;
+@using Sandbox.Utility;
+@attribute [StyleSheet]
+@inherits Panel;
+
+<root>
+    <div id="categoryTitle">@LeaderboardCategory</div>
+    @if ( IsLoading )
+    {
+        <div id="loadingIcon" style="transform: rotateZ(@((Time.Now % 1f) * 360f))"/>
+        return;
+    }
+    <div id="entryList">
+        @foreach ( var entry in Entries )
+		{
+			<div class="entry">
+				<div class="rank @GetRankClass(entry.Rank)">@entry.Rank</div>
+				<div class="name">@entry.DisplayName</div>
+				<div class="score">@entry.FormattedValue</div>
+			</div>
+		}
+    </div>
+</root>
+
+@code {
+    private bool IsLoading = true;
+    private string LeaderboardCategory { get; set; } = "Highest Score";
+    private List<Leaderboards.Entry> Entries { get; set; } = new();
+
+    protected override void OnAfterTreeRender(bool firstTime)
+    {
+        base.OnAfterTreeRender(firstTime);
+
+        if (!firstTime)
+            return;
+
+        LoadLeaderboard();
+    }
+
+    private async Task LoadLeaderboard()
+    {
+        Entries.Clear();
+        var board = Leaderboards.Get("highest-score");
+        board.MaxEntries = 10;
+        board.Group = "global";
+        await board.Refresh();
+        IsLoading = false;
+        LeaderboardCategory = board.DisplayName;
+        Entries.AddRange( board.Entries );
+    }
+
+    protected override int BuildHash()
+    {
+        if ( IsLoading)
+        {
+            return Time.Now.GetHashCode();
+        }
+        return Entries.Count;
+    }
+
+    private string GetRankClass( long rank )
+    {
+        if ( rank == 1 )
+			return "first";
+		if ( rank == 2 )
+			return "second";
+		if ( rank == 3 )
+			return "third";
+		return "";
+	
+    }
+}
