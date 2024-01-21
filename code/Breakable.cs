@@ -29,7 +29,7 @@ public sealed class Breakable : Component
 		}
 		if ( BreakDebris is not null )
 		{
-			var debris = SceneUtility.Instantiate( BreakDebris, Transform.World );
+			var debris = BreakDebris.Clone( Transform.World );
 			var rb = Components.Get<Rigidbody>();
 			if ( rb is not null )
 			{

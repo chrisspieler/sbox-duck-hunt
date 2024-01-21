@@ -167,7 +167,7 @@ public sealed class GameState : Component
 
 	private void SpawnFloatingText( string text, string textClass, Vector3 position, float scale = 1f )
 	{
-		var floatingScore = SceneUtility.Instantiate( FloatingScorePrefab, position );
+		var floatingScore = FloatingScorePrefab.Clone( position );
 		floatingScore.Enabled = true;
 		floatingScore.Transform.Scale = scale;
 		var scoreText = floatingScore.Components.Get<FloatingScoreText>();

@@ -12,8 +12,8 @@ public sealed class Gun : Component
 	{
 		if ( _lastFireTime > FireRate && Input.Pressed("attack1") )
 		{
-			var fireDirection = Screen.GetDirection( Mouse.Position );
-			var fireRay = new Ray( Camera.Main.Position, fireDirection );
+			
+			var fireRay = Scene.Camera.ScreenPixelToRay( Mouse.Position );
 			Fire( fireRay );
 			_lastFireTime = 0f;
 		}
@@ -23,11 +23,11 @@ public sealed class Gun : Component
 	{
 		if ( ShotSound is not null )
 		{
-			Sound.Play( ShotSound, Camera.Main.Position );
+			Sound.Play( ShotSound, Scene.Camera.Transform.Position );
 		}
 		if ( BoltSound is not null )
 		{
-			Sound.Play( BoltSound, Camera.Main.Position );
+			Sound.Play( BoltSound, Scene.Camera.Transform.Position );
 		}
 		var tr = Scene.Trace
 			.Ray( aimRay, 5000f )

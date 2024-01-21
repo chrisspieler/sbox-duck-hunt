@@ -20,7 +20,7 @@ public sealed class Launcher : Component
 		if ( Prefab == null )
 			return;
 
-		var go = SceneUtility.Instantiate( Prefab, Transform.World );
+		var go = Prefab.Clone( Transform.World );
 		go.Enabled = true;
 		var rb = go.Components.GetOrCreate<Rigidbody>();
 		var randomDirection = (Transform.Rotation.Forward + Vector3.Random * DirectionRandomness).Normal;
