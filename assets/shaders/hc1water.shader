@@ -158,7 +158,6 @@ PS
 		float3 vNormalSample = GetNormalForPixel( i.vNormalWs, vTextureCoords.xy ); 
 		m.Normal = TransformNormal( vNormalSample, i.vNormalWs, i.vTangentUWs, i.vTangentVWs );
 		float2 vRefractionUv = vScreenUv + vNormalSample.xy;
-
 		//
 		// Translucency and refraction
 		//

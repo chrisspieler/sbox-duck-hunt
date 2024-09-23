@@ -8,25 +8,20 @@ Layer0
 	F_DO_NOT_CAST_SHADOWS 1
 	F_RENDER_BACKFACES 1
 
-	//---- Fog ----
-	g_bFogEnabled "1"
-
 	//---- General ----
 	g_bPlanarReflections "0"
 	g_flScale "1.000"
 	g_flSpeedA "[0.025 0.025]"
 	g_flSpeedB "[-0.025 -0.025]"
-	g_vColor "[0.333333 0.392157 0.356863 1.000000]"
-	g_vDeepColor "[0.074510 0.082353 0.058824 1.000000]"
+	g_vColor "[0.466667 0.474510 0.450980 1.000000]"
+	g_vDeepColor "[0.243137 0.266667 0.196078 1.000000]"
 	NormalMapA "materials/water1_normal.jpg"
 	NormalMapB "materials/water2_normal.jpg"
 
 	//---- Material ----
-	g_flMetallic "0.000"
-	g_flNormalScale "0.250"
+	g_flNormalScale "0.144"
 	g_flOpacity "0.050"
-	g_flRoughness "0.050"
-	g_flTilingScale "5.000"
+	g_flTilingScale "3.000"
 	g_flTintColor "[1.000000 1.000000 1.000000 0.000000]"
 	TextureColor "[1.000000 1.000000 1.000000 0.000000]"
 	TextureNormal "materials/default/default_normal.tga"
@@ -40,5 +35,5 @@ Layer0
 
 	//---- Water ----
 	g_flShorelineFeatheringScale "1.000"
-	g_flWaterDepthScale "9.056"
+	g_flWaterDepthScale "3.000"
 }
