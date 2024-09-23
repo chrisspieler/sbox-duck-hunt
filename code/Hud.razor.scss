@@ -113,6 +113,7 @@ Hud {
 			.row {
                 align-items: center;
 				justify-content: space-between;
+				position: relative;
 
 				.special {
 					color: yellow;
@@ -120,7 +121,7 @@ Hud {
 
 				.pb {
 					position: absolute;
-					left: 120%;
+					left: 102.5%;
 					font-size: 28px;
 				}
 			}
