@@ -1,0 +1,17 @@
+{
+  "MasterVolume": "0.25",
+  "LoopedSounds": [
+    {
+      "SoundFile": "sounds/ambience/forest-day-loop.vsnd",
+      "Volume": "1"
+    },
+    {
+      "SoundFile": "sounds/ambience/plains-wind-loop.vsnd",
+      "Volume": "0.25"
+    }
+  ],
+  "StingSounds": [],
+  "__references": [],
+  "IsValid": true,
+  "__version": 0
+}

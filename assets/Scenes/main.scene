@@ -2797,6 +2797,57 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "367f56ca-591e-4c28-b96f-6f871ba0570b",
+      "Flags": 0,
+      "Name": "Soundscape",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundscapeTrigger",
+          "__guid": "53542716-5eb8-4f3f-aaf0-5a77921dd2b8",
+          "BoxSize": "50,50,50",
+          "Radius": 500,
+          "Soundscape": "sfx/duck_pond.sndscape",
+          "StayActiveOnExit": true,
+          "Type": "Point"
+        }
+      ]
+    },
+    {
+      "__guid": "53cac74e-9815-4832-bebb-38d92b6f3c1c",
+      "Flags": 0,
+      "Name": "Stream Sound",
+      "Position": "849.5428,41.22019,24.89766",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundPointComponent",
+          "__guid": "0b5cf9ca-431d-45e4-95c7-cc97deffb8bd",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": true,
+          "SoundEvent": "sfx/stream_light.sound",
+          "SoundOverride": true,
+          "StopOnNew": false,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
+          "Volume": 8
+        }
+      ]
     }
   ],
   "SceneProperties": {
