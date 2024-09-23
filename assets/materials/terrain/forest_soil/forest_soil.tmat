@@ -1,0 +1,15 @@
+{
+  "AlbedoImage": "materials/terrain/forest_soil/forest_ground_04_diff_2k.jpg",
+  "RoughnessImage": "materials/terrain/forest_soil/forest_ground_04_rough_2k.jpg",
+  "NormalImage": "materials/terrain/forest_soil/forest_ground_04_nor_gl_2k.jpg",
+  "HeightImage": "materials/terrain/forest_soil/forest_ground_04_disp_2k.jpg",
+  "AOImage": "materials/terrain/forest_soil/forest_ground_04_ao_2k.jpg",
+  "UVScale": 1,
+  "UVRotation": 0,
+  "Metalness": 0,
+  "NormalStrength": 1,
+  "HeightBlendStrength": 0.8,
+  "Surface": null,
+  "__references": [],
+  "__version": 0
+}

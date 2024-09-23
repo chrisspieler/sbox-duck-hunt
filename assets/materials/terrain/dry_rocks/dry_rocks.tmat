@@ -1,0 +1,15 @@
+{
+  "AlbedoImage": "materials/terrain/dry_rocks/rocky_trail_diff_2k.jpg",
+  "RoughnessImage": "materials/terrain/dry_rocks/rocky_trail_rough_2k.jpg",
+  "NormalImage": "materials/terrain/dry_rocks/rocky_trail_nor_gl_2k.jpg",
+  "HeightImage": "materials/terrain/dry_rocks/rocky_trail_disp_2k.jpg",
+  "AOImage": "materials/terrain/dry_rocks/rocky_trail_ao_2k.jpg",
+  "UVScale": 1,
+  "UVRotation": 0,
+  "Metalness": 0,
+  "NormalStrength": 1,
+  "HeightBlendStrength": 1,
+  "Surface": "surfaces/dirt.surface",
+  "__references": [],
+  "__version": 0
+}
