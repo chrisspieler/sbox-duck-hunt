@@ -196,10 +196,18 @@
         {
           "__type": "Sandbox.ColorAdjustments",
           "__guid": "33a09b19-5f42-4598-9356-2217017195f6",
-          "Brightness": 1,
+          "Brightness": 1.6,
           "Contrast": 1,
           "HueRotate": 0,
-          "Saturation": 1
+          "Saturation": 1.1
+        },
+        {
+          "__type": "Sandbox.DepthOfField",
+          "__guid": "5270ceb3-1721-4514-9fad-23b2e985e93d",
+          "BackBlur": true,
+          "BlurSize": 800,
+          "FocalDistance": 1000,
+          "FrontBlur": false
         }
       ]
     },
@@ -2663,6 +2671,132 @@
           "Tint": "1,1,1,1"
         }
       ]
+    },
+    {
+      "__guid": "46c27299-8531-4364-b9b0-b247f51eb3a6",
+      "Flags": 0,
+      "Name": "Thumbnail Camera",
+      "Position": "116.5263,0,19.21234",
+      "Rotation": "0,-0.08077881,0,0.9967321",
+      "Tags": "skybox",
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "5b126c61-c0ca-48bc-9327-60083d4a5dcb",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 40,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 30000,
+          "ZNear": 5
+        },
+        {
+          "__type": "Sandbox.Tonemapping",
+          "__guid": "3933b39a-a1a0-46fc-982e-95590a08cb67",
+          "__version": 1,
+          "AutoExposureEnabled": false,
+          "ExposureBias": 2,
+          "ExposureCompensation": 0,
+          "ExposureMethod": "RGB",
+          "MaximumExposure": 3,
+          "MinimumExposure": 1,
+          "Mode": "ACES",
+          "Rate": 1
+        },
+        {
+          "__type": "Sandbox.Bloom",
+          "__guid": "aa989121-325b-434a-8b8d-03ce32c8fc60",
+          "BloomColor": {
+            "color": [
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": []
+          },
+          "BloomCurve": [
+            {
+              "y": 0.5
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Mode": "Additive",
+          "Strength": 2.36,
+          "Threshold": 0.48,
+          "ThresholdWidth": 1.31
+        },
+        {
+          "__type": "Sandbox.AmbientOcclusion",
+          "__guid": "a36fc4f3-b781-49d8-a016-5e759d6ec661",
+          "FalloffDistance": 1,
+          "Intensity": 8,
+          "Quality": "High",
+          "Radius": 32
+        },
+        {
+          "__type": "Sandbox.ColorAdjustments",
+          "__guid": "0c7f3c67-2994-436e-bd86-4a8f4a6d0dda",
+          "Brightness": 1,
+          "Contrast": 1,
+          "HueRotate": 0,
+          "Saturation": 1.2
+        },
+        {
+          "__type": "Sandbox.DepthOfField",
+          "__guid": "ed3ecb64-3b96-446a-ab80-709acf942eb3",
+          "BackBlur": true,
+          "BlurSize": 100,
+          "FocalDistance": 598.45,
+          "FrontBlur": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "adbc1169-34ae-46c4-b204-a2bde31d3f05",
+          "Flags": 0,
+          "Name": "Stunt Duck",
+          "Position": "354.4055,5.771576,29.00438",
+          "Rotation": "0.04826808,-0.1596579,0.7584489,-0.6300277",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "2919795b-acde-4511-8a61-2b445b5dcf49",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/duck_decoration/duck_decoration.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "aa0ece46-d3eb-41d9-bc37-23d1ac72d089",
+              "IsTrigger": false,
+              "Model": "models/duck_decoration/duck_decoration.vmdl",
+              "Static": false
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -2690,6 +2824,7 @@
   "Description": "",
   "ResourceVersion": 1,
   "__references": [
+    "duccsoft.duck_decoration",
     "facepunch.beech_shrub_tall_large",
     "facepunch.beech_shrub_tall_medium",
     "facepunch.beech_shrub_wide_medium",
