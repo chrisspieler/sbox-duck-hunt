@@ -1,38 +1,51 @@
 {
   "RootObject": {
-    "Id": "1b43247e-5d7a-4f89-a74b-2991cc3e7ef2",
-    "Name": "Model Score",
-    "Position": "0,0,0",
+    "__guid": "1b43247e-5d7a-4f89-a74b-2991cc3e7ef2",
+    "Flags": 0,
+    "Name": "floatingscore",
     "Enabled": true,
     "Components": [
       {
-        "__type": "WorldPanel",
-        "__enabled": true,
+        "__type": "Sandbox.WorldPanel",
+        "__guid": "0d0b4cd6-ebb3-4262-ac47-ab1aa720d22e",
         "HorizontalAlign": "Center",
+        "InteractionRange": 1000,
         "LookAtCamera": true,
         "PanelSize": "4096,1024",
+        "RenderOptions": {
+          "GameLayer": false,
+          "OverlayLayer": true,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
         "RenderScale": 1,
         "VerticalAlign": "Center"
       },
       {
         "__type": "FloatingScoreText",
-        "__enabled": true,
+        "__guid": "12655e60-f9bf-4a59-800f-36678d5a3d19",
         "FadeInStart": 0.25,
         "FloatAwayDistance": 75,
         "FloatAwayTime": 1.5,
         "StartPosition": "0,0,0",
+        "SwayFactor": 5,
         "Text": "\u002B25",
         "TextClass": ""
       },
       {
         "__type": "SelfDestruct",
-        "__enabled": true,
+        "__guid": "b87c7f76-6ad5-47cb-9130-bd58134955f6",
         "Delay": 1.5
       }
-    ]
+    ],
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
 }

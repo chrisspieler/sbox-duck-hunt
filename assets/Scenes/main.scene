@@ -63,7 +63,7 @@
       "__guid": "0444e124-f883-4e71-a277-c287e787c2aa",
       "Flags": 0,
       "Name": "2D Skybox",
-      "Rotation": "0,0,-0.7933533,0.6087614",
+      "Rotation": "0,0,0.3826833,0.9238796",
       "Tags": "skybox",
       "Enabled": true,
       "Components": [
@@ -107,8 +107,8 @@
         {
           "__type": "Sandbox.CubemapFog",
           "__guid": "b7ef4a51-b310-4cde-86fa-a3cfe0474c12",
-          "Blur": 0,
-          "EndDistance": 30000,
+          "Blur": 0.6,
+          "EndDistance": 50000,
           "FalloffExponent": 1,
           "HeightExponent": 2,
           "HeightStart": 2000,
@@ -180,10 +180,10 @@
               "y": 1
             }
           ],
-          "Mode": "Screen",
-          "Strength": 0.86,
-          "Threshold": 0.52,
-          "ThresholdWidth": 0.41
+          "Mode": "Additive",
+          "Strength": 2,
+          "Threshold": 0.6,
+          "ThresholdWidth": 0.2
         },
         {
           "__type": "Sandbox.AmbientOcclusion",
@@ -192,6 +192,14 @@
           "Intensity": 8,
           "Quality": "High",
           "Radius": 32
+        },
+        {
+          "__type": "Sandbox.ColorAdjustments",
+          "__guid": "33a09b19-5f42-4598-9356-2217017195f6",
+          "Brightness": 1,
+          "Contrast": 1,
+          "HueRotate": 0,
+          "Saturation": 1
         }
       ]
     },
@@ -300,7 +308,7 @@
           "__guid": "53d536e6-ab61-4a16-a4f3-a35d38b5f651",
           "Flags": 0,
           "Name": "tallgrass_b",
-          "Position": "408.423,119.2039,3.487646",
+          "Position": "560.7677,84.16663,3.48764",
           "Enabled": true,
           "Components": [
             {
@@ -1105,6 +1113,31 @@
           "IsTrigger": false,
           "Model": "models/sbox_props/trees/oak/tree_oak_big_a.vmdl",
           "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "c318cce6-f585-42f5-8ca0-e6890d047e54",
+      "Flags": 0,
+      "Name": "Plane",
+      "Position": "2153.584,320,7.0678",
+      "Scale": "30,30,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "6dab726c-f7f5-4df9-9e56-edac12a46e49",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/pond_water.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         }
       ]
     }
