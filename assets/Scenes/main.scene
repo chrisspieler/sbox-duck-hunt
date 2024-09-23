@@ -205,7 +205,7 @@
           "__guid": "5b66af12-5ea5-410b-8c8c-70e48849384c",
           "Flags": 0,
           "Name": "grass_clump_a",
-          "Position": "443.2574,-12.47775,5",
+          "Position": "246.4995,-35.2882,7.843143",
           "Enabled": true,
           "Components": [
             {
@@ -225,15 +225,179 @@
           ]
         },
         {
+          "__guid": "966a91b8-6745-4136-9c2d-51b203f8ba7c",
+          "Flags": 0,
+          "Name": "grass_clump_a",
+          "Position": "337.667,-52.59997,7.843163",
+          "Rotation": "0,0,0.5,0.8660254",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "cc1239f7-ef04-42fd-9ae1-b1c7ddc16494",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/sbox_props/nature/grass_clumps/grass_clump_a.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "95f88fb1-e7b9-4365-b818-52573fb514eb",
+          "Flags": 0,
+          "Name": "grass_clump_a",
+          "Position": "224,64,9.653954",
+          "Rotation": "0,0,-1,0.0000001947072",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "08fc664d-fe81-49c3-b9c3-3d39b3a5995e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/sbox_props/nature/grass_clumps/grass_clump_a.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "f526eb20-0a86-4f99-8993-8789ec9b3448",
+          "Flags": 0,
+          "Name": "tallgrass_c",
+          "Position": "608,64,5.094234",
+          "Rotation": "0,0,0.9990483,-0.04361752",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ba1b024f-f5a0-4646-8c83-f9cdd99f2a40",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/sbox_props/nature/tallgrass/tallgrass_c.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "53d536e6-ab61-4a16-a4f3-a35d38b5f651",
+          "Flags": 0,
+          "Name": "tallgrass_b",
+          "Position": "408.423,119.2039,3.487646",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "08719c76-89e5-4d61-86a0-63c6c38348f4",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/sbox_props/nature/tallgrass/tallgrass_b.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "1aebf3cc-65c8-4f3f-9ee5-6b6149d12d66",
+          "Flags": 0,
+          "Name": "tallgrass_a",
+          "Position": "512,0,3.344926",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "fe19ccac-7000-4d4d-9f7c-96847e9ead6d",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/sbox_props/nature/tallgrass/tallgrass_a.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
           "__guid": "a5aeca49-4d76-4bd7-8fd3-207cb412ebe5",
           "Flags": 0,
           "Name": "grass_clump_b",
-          "Position": "407.0677,62.29543,5",
+          "Position": "245.3277,-126.9128,4.999957",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "bc1c6d21-d159-4d28-9a75-6447288e50d1",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/sbox_props/nature/grass_clumps/grass_clump_b.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "ca9a7f07-bacd-427d-bd52-ba884e129012",
+          "Flags": 0,
+          "Name": "grass_clump_b",
+          "Position": "173.2161,-7.298271,4.999924",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "8c605df6-36c6-400c-9bb8-9f216299a402",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/sbox_props/nature/grass_clumps/grass_clump_b.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "9bf03e9a-1588-4107-94fd-08460060153b",
+          "Flags": 0,
+          "Name": "grass_clump_b",
+          "Position": "313.9122,18.27018,6.412249",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "b81164a9-a165-480d-88b7-66510235a565",
               "BodyGroups": 18446744073709551615,
               "Model": "models/sbox_props/nature/grass_clumps/grass_clump_b.vmdl",
               "RenderOptions": {
@@ -260,7 +424,7 @@
           "__guid": "9064344a-d288-4341-a399-dbed50d2dc8b",
           "Flags": 0,
           "Name": "pine_bush_regular_c",
-          "Position": "1727.99,-107.5874,-600.8843",
+          "Position": "1818.458,15.898,-600.8843",
           "Enabled": true,
           "Components": [
             {
@@ -306,7 +470,8 @@
           "__guid": "5eba1bc4-33dc-4e98-984e-1ae1aea3d7ee",
           "Flags": 0,
           "Name": "bush_large_spread",
-          "Position": "1875.908,-126.987,-600.8843",
+          "Position": "1882.458,-126.987,-608.4288",
+          "Scale": "0.5,0.5,0.5",
           "Enabled": true,
           "Components": [
             {
@@ -352,7 +517,7 @@
           "__guid": "9eb04f29-e354-48a0-be07-f37e13ccb5a9",
           "Flags": 0,
           "Name": "pine_shrub_wide (1)",
-          "Position": "1680.674,-29.59554,-600.8844",
+          "Position": "1754.458,47.898,-600.8844",
           "Rotation": "-0.00000005252214,-0.000000000000009775788,-0.8811751,-0.4727903",
           "Enabled": true,
           "Components": [
@@ -400,7 +565,8 @@
           "__guid": "03acd2ba-c3fe-46db-bb11-deb70da9fed7",
           "Flags": 0,
           "Name": "bush_willow_b",
-          "Position": "1482.492,131.3719,-600.8843",
+          "Position": "1673.574,-174.4586,-600.8843",
+          "Rotation": "0,0,0.6087614,0.7933534",
           "Enabled": true,
           "Components": [
             {
@@ -429,6 +595,30 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "6aa7ba70-aeee-405e-b5a4-5bd7a6c05146",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rust_nature/overgrowth/bush_large_spread.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "7a16e8fb-71fd-423a-9922-e9636d9e705d",
+          "Flags": 0,
+          "Name": "bush_large_spread",
+          "Position": "1562.458,175.898,-605.8843",
+          "Rotation": "0,0,0.258819,0.9659258",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "bfef9d28-71a2-426e-be07-5a366ee8a7cd",
               "BodyGroups": 18446744073709551615,
               "Model": "models/rust_nature/overgrowth/bush_large_spread.vmdl",
               "RenderOptions": {
@@ -499,6 +689,299 @@
       ]
     },
     {
+      "__guid": "2bfe7f86-1cd8-4f36-8244-c510f511993a",
+      "Flags": 0,
+      "Name": "Rocks",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "643ad61d-f0d0-4902-a79e-6f708c153623",
+          "Flags": 0,
+          "Name": "rock_moss_01a",
+          "Position": "3717.676,497.3474,35.04381",
+          "Rotation": "0.1329803,-0.1777062,0.7663405,0.6028756",
+          "Scale": "3,3,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "66db7443-58df-4f3f-b35d-5ae16a2b9e2b",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_01a.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "9923dc9a-4dda-4f09-bbc7-a1d7735ad485",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_01a.vmdl",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "303448b3-8b1c-4fdd-a3c4-352aa2c38a82",
+          "Flags": 0,
+          "Name": "rock_moss_01b",
+          "Position": "1939.007,-81.84795,-0.00005463821",
+          "Rotation": "0.0009643181,-0.1306071,0.9914067,0.007319907",
+          "Scale": "3,3,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "70bbbca8-a202-4787-985e-595440e6bfd9",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_01b.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "19062617-d6df-4cc3-96d2-e5adb65b5187",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_01b.vmdl",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "6737a121-0969-4922-9cb0-7990ff9fdc93",
+          "Flags": 0,
+          "Name": "rock_moss_02a",
+          "Position": "522.614,45.88674,-1.664791",
+          "Rotation": "0,0,0.1305262,0.9914449",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ca7198d6-5699-4020-b559-d966c0493be5",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_set_02/rock_moss_02a.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "ca028821-7f67-40f9-8a80-a002a70ce374",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_set_02/rock_moss_02a.vmdl",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "c04d450c-acec-44eb-9824-54d84958b569",
+          "Flags": 0,
+          "Name": "rock_moss_02b",
+          "Position": "3264,-512,12.8114",
+          "Rotation": "-0.1205905,0.0499502,0.3794095,0.9159757",
+          "Scale": "3,3,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "c918c0ed-d8e3-48e9-af2b-9f77c304a394",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_set_02/rock_moss_02b.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "a372fcb7-7c91-4ad1-9f49-57900c85438e",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_set_02/rock_moss_02b.vmdl",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "8f643710-c151-476b-99cb-91da871e272f",
+          "Flags": 0,
+          "Name": "rock_moss_02c",
+          "Position": "3680,-17.23452,32",
+          "Scale": "3,3,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "d50d27bd-8035-4525-b7ad-2830764a74e7",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_set_02/rock_moss_02c.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "d94c7076-7991-4250-a7d2-9cf7e381fe1a",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_set_02/rock_moss_02c.vmdl",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "0976e719-59f2-4300-8a5f-16c349893414",
+          "Flags": 0,
+          "Name": "rock_moss_02d",
+          "Position": "3584,-559.6862,96",
+          "Rotation": "-0.1447358,-0.1455017,-0.08404672,0.9750984",
+          "Scale": "3,3,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "7e9c4d41-9f1f-49f1-8032-bc135cd09fd3",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_set_02/rock_moss_02d.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "f221f129-5fb8-4975-a613-b6147370b6f2",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_set_02/rock_moss_02d.vmdl",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "d27f87f1-17a7-4c55-8f49-d213d41c60e5",
+          "Flags": 0,
+          "Name": "rock_moss_02e",
+          "Position": "3755.132,-932.1176,450.0258",
+          "Rotation": "-0.002465144,0.01872463,-0.1305029,0.9912681",
+          "Scale": "3,3,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a686c325-9410-403a-9771-1cbe2b2cb9f1",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_set_02/rock_moss_02e.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "7657d0df-4f89-44ad-84a7-190eb57405e9",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_set_02/rock_moss_02e.vmdl",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "46184628-8a4c-443a-b54e-3aaa5b482641",
+          "Flags": 0,
+          "Name": "rock_moss_02f",
+          "Position": "3963.504,-126.9541,120.1741",
+          "Rotation": "0,-0.1305262,0,0.9914449",
+          "Scale": "3,3,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "740869c6-cefc-4968-b3df-3b9a02266359",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_set_02/rock_moss_02f.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "2d476a07-0934-444b-999e-20fff93abd04",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_set_02/rock_moss_02f.vmdl",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "9fdccc5d-c2b5-42a2-82cf-bb84a271b25a",
+          "Flags": 0,
+          "Name": "rock_moss_02g",
+          "Position": "2139.262,636.8141,-49.40804",
+          "Scale": "3,3,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "9cc95aa2-f894-4f2f-b596-108e16598c48",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/rock_moss_set_02/rock_moss_02g.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "b4d02490-ec2b-42a2-83b6-a3913b3b47b8",
+              "IsTrigger": false,
+              "Model": "models/rock_moss_set_02/rock_moss_02g.vmdl",
+              "Static": true
+            }
+          ]
+        }
+      ]
+    },
+    {
       "__guid": "3691f986-54a0-4415-82d4-32c9b9d7eadb",
       "Flags": 0,
       "Name": "Duck Launcher",
@@ -563,6 +1046,67 @@
           "TerrainSize": 19968
         }
       ]
+    },
+    {
+      "__guid": "975518d4-bb22-4817-847a-3a7237a25860",
+      "Flags": 0,
+      "Name": "tree_oak_medium_a",
+      "Position": "8974.02,-160,250.2126",
+      "Rotation": "0,0,0.3826834,0.9238796",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "b44d9a85-e39e-4020-8673-cdbd868e08ba",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sbox_props/trees/oak/tree_oak_medium_a.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "80364d37-6dec-4bf9-93e0-a89d7440fcd7",
+          "IsTrigger": false,
+          "Model": "models/sbox_props/trees/oak/tree_oak_medium_a.vmdl",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "876f06a1-a61c-4fae-af4b-67a98aee2c67",
+      "Flags": 0,
+      "Name": "tree_oak_big_a",
+      "Position": "8383.204,3053.207,284.3643",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a8574a42-0d85-4ddf-b77c-0172aa1e37b3",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sbox_props/trees/oak/tree_oak_big_a.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "5dc66d66-49df-4992-8bec-0dd36400e637",
+          "IsTrigger": false,
+          "Model": "models/sbox_props/trees/oak/tree_oak_big_a.vmdl",
+          "Static": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -596,8 +1140,22 @@
     "facepunch.pine_bush_regular_c",
     "facepunch.pine_shrub_tall_b",
     "facepunch.pine_shrub_wide",
+    "facepunch.tallgrass_a",
+    "facepunch.tallgrass_b",
+    "facepunch.tallgrass_c",
+    "facepunch.tree_oak_big_a",
     "facepunch.tree_oak_big_b",
+    "facepunch.tree_oak_medium_a",
     "facepunch.tree_oak_small_a",
+    "polyhaven.rock_moss_01a",
+    "polyhaven.rock_moss_01b",
+    "polyhaven.rock_moss_02a",
+    "polyhaven.rock_moss_02b",
+    "polyhaven.rock_moss_02c",
+    "polyhaven.rock_moss_02d",
+    "polyhaven.rock_moss_02e",
+    "polyhaven.rock_moss_02f",
+    "polyhaven.rock_moss_02g",
     "rust.bush_large_spread",
     "rust.bush_willow_b"
   ],
