@@ -1,4 +1,6 @@
-﻿LeaderboardPanel {
+﻿@import "../Style/_main.scss";
+
+LeaderboardPanel {
     position: absolute;
     right: 125px;
     flex-direction: column;
