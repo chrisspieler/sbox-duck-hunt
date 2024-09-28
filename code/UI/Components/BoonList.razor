@@ -1,0 +1,22 @@
+﻿@using Sandbox.UI;
+@using System.Linq;
+@inherits Panel
+@attribute [StyleSheet]
+
+<root class="flex-col">
+    <div class="header shrink-0">
+        <label class="grow">Boons</label>
+        <div class="button material-icon" onclick=@OpenBoonShop>shopping_cart</div>
+    </div>
+    @if ( !Boons.Any() )
+    {
+        <label class="message">No boons purchased yet.</label>
+    }
+    else
+    {
+        @foreach( var boon in Boons )
+        {
+            <BoonToggle class="shrink-0" Boon=@boon/>
+        }
+    }
+</root>

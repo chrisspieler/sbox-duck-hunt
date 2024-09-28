@@ -1,0 +1,13 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+
+<root class="justify-between">
+    @if (!Boon.IsValid())
+        return;
+
+    <img src=@Boon.Icon id="boonIcon"/>
+    <label class="grow">@Boon.Title</label>
+    <SwitchControl id="boonSwitch"/>
+</root>

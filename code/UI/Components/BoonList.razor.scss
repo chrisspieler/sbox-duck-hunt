@@ -1,0 +1,51 @@
+﻿@import "../Style/_main.scss";
+
+BoonList {
+    background-color: #0008;
+    border: 2px solid #FFFFFF02;
+    backdrop-filter: blur(10px);
+    border-radius: 25px 5px 25px 25px;
+    color: white;
+    font-family: Poppins;
+    font-size: 24px;
+
+    > .header {
+        border-bottom: 2px solid white;
+        font-size: 36px;
+        text-align: center;
+        
+        > .button {
+            margin: 5px 5px 5px 0px;
+        }
+
+        .button {
+            border: 1px solid #0001;
+            color: black;
+            background-color: white;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+
+            &:hover {
+                border-color: #FFF1;
+                background-color: black;
+                color: white;
+            }
+
+            &:active {
+                transform: scale(0.98);
+                filter: brightness( 0.2 );
+            }
+
+            &.dark {
+                border-color: white;
+            }
+        }
+    }
+
+    > .message {
+        font-size: 18px;
+        text-align: center;
+    }
+}

@@ -172,6 +172,13 @@ Hud {
 				font-family: Poppins;
 			}
 		}
+
+		> BoonList {
+			position: absolute;
+			left: 5%;
+			width: 15%;
+			height: 30%;
+		}
 	}
 
 	#timerBox {
