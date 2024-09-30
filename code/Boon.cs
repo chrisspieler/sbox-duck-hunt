@@ -17,7 +17,20 @@ public class Boon : GamePass
 
 		foreach( var boon in allBoons )
 		{
-			if ( !boon.IsOneTimePurchase || !Monetization.Has( boon ) )
+			if ( !boon.IsOneTimePurchase || !boon.Has() )
+			{
+				yield return boon;
+			}
+		}
+	}
+
+	public static IEnumerable<Boon> GetOwned()
+	{
+		var allBoons = ResourceLibrary.GetAll<Boon>();
+
+		foreach( var boon in allBoons )
+		{
+			if ( boon.Has() )
 			{
 				yield return boon;
 			}

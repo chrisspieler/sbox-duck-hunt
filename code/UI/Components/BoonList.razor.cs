@@ -4,7 +4,7 @@ using System.Linq;
 
 public partial class BoonList : Panel
 {
-	private List<Boon> Boons { get; set; } = new();
+	private List<Boon> PurchasedBoons { get; set; } = new();
 
 	protected override void OnAfterTreeRender( bool firstTime )
 	{
@@ -13,7 +13,7 @@ public partial class BoonList : Panel
 		if ( !firstTime )
 			return;
 
-		Boons = Boon.GetPurchaseable().ToList();
+		PurchasedBoons = Boon.GetOwned().ToList();
 	}
 
 	private void OpenBoonShop()

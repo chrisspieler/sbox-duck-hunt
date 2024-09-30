@@ -8,13 +8,13 @@
         <label class="grow">Boons</label>
         <div class="button material-icon" onclick=@OpenBoonShop>shopping_cart</div>
     </div>
-    @if ( !Boons.Any() )
+    @if (!PurchasedBoons.Any())
     {
         <label class="message">No boons purchased yet.</label>
     }
     else
     {
-        @foreach( var boon in Boons )
+        @foreach (var boon in PurchasedBoons )
         {
             <BoonToggle class="shrink-0" Boon=@boon/>
         }
