@@ -13,7 +13,13 @@ public partial class BoonList : Panel
 		if ( !firstTime )
 			return;
 
+		RefreshBoonList();
+	}
+
+	public void RefreshBoonList()
+	{
 		PurchasedBoons = Boon.GetOwned().ToList();
+		StateHasChanged();
 	}
 
 	private void OpenBoonShop()
