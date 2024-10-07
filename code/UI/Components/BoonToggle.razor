@@ -3,11 +3,11 @@
 @inherits Panel
 @attribute [StyleSheet]
 
-<root class="justify-between">
+<root class="justify-between items-center">
     @if (!Boon.IsValid())
         return;
 
     <img src=@Boon.Icon id="boonIcon"/>
-    <label class="grow">@Boon.Title</label>
-    <SwitchControl id="boonSwitch"/>
+    <label id="titleLabel" class="grow text-center">@Boon.Title</label>
+    <SwitchControl id="boonSwitch" @ref=Toggle/>
 </root>

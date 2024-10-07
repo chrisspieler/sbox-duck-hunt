@@ -1,9 +1,9 @@
 {
   "IsOneTimePurchase": true,
-  "Description": "Cold Fingers",
+  "Description": "Reduces the firing rate of your gun without any noticeable increase in performance.",
   "Ident": "gun_slow",
   "Cost": 15,
-  "Title": "Reduces the firing rate of your gun without any noticeable increase in performance.",
+  "Title": "Cold Fingers",
   "Icon": "ui/bufferingcircle.png",
   "__references": [],
   "IsValid": true,

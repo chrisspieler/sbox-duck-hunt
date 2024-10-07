@@ -33,8 +33,7 @@ public class Boon : GamePass
 		if ( !boon.IsValid() )
 			return false;
 
-		var useDebug = Debug && Game.IsEditor;
-		return useDebug ? DebugBoons.Contains( boon ) : boon.Has();
+		return Debug ? DebugBoons.Contains( boon ) : boon.Has();
 	}
 
 	public static IEnumerable<Boon> GetPurchaseable()
@@ -73,8 +72,7 @@ public class Boon : GamePass
 	[ConCmd("boon_add")]
 	public static void DebugAdd( string boonName )
 	{
-		var useDebug = Debug && Game.IsEditor;
-		if ( !useDebug || string.IsNullOrWhiteSpace( boonName ) )
+		if ( !Debug || string.IsNullOrWhiteSpace( boonName ) )
 			return;
 
 		DebugBoons ??= new();
@@ -105,8 +103,7 @@ public class Boon : GamePass
 	[ConCmd("boon_clearall")]
 	public static void DebugClearAll()
 	{
-		var useDebug = Debug && Game.IsEditor;
-		if ( !useDebug )
+		if ( !Debug )
 			return;
 
 		DebugBoons ??= new();

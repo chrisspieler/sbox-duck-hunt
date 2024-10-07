@@ -1,10 +1,22 @@
-﻿BoonToggle {
+﻿@import "../Style/_main.scss";
+
+BoonToggle {
+    padding: 5px;
 
     #boonIcon {
+        height: 4vh;
+        width: 4vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+        flex-shrink: 1;
+    }
 
+    #titleLabel {
+        font-size: 18px;
     }
 
     #boonSwitch {
-
+        justify-content: center;
+        width: auto;
     }
 }

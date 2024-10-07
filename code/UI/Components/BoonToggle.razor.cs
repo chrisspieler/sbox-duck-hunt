@@ -4,7 +4,7 @@ using Sandbox.UI;
 
 public partial class BoonToggle : Panel
 {
-	public GamePass Boon { get; set; }
+	public Boon Boon { get; set; }
 	public SwitchControl Toggle { get; set; }
 	public bool Value 
 	{
