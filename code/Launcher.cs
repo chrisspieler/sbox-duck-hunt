@@ -10,8 +10,8 @@ public sealed class Launcher : Component
 	protected override void DrawGizmos()
 	{
 		Gizmo.Draw.Color = Color.Red;
-		var lineEnd = Transform.Position + Transform.Rotation.Forward * LaunchSpeed;
-		Gizmo.Draw.Line( Transform.Position, lineEnd );
+		var lineEnd = WorldPosition + WorldRotation.Forward * LaunchSpeed;
+		Gizmo.Draw.Line( WorldPosition, lineEnd );
 		Gizmo.Draw.LineSphere( new Sphere( lineEnd, 10f ) );
 	}
 
@@ -23,7 +23,7 @@ public sealed class Launcher : Component
 		var go = Prefab.Clone( Transform.World );
 		go.Enabled = true;
 		var rb = go.Components.GetOrCreate<Rigidbody>();
-		var randomDirection = (Transform.Rotation.Forward + Vector3.Random * DirectionRandomness).Normal;
+		var randomDirection = (WorldRotation.Forward + Vector3.Random * DirectionRandomness).Normal;
 		rb.Velocity = randomDirection * LaunchSpeed;
 		rb.AngularVelocity = Vector3.Random * LaunchSpin;
 	}

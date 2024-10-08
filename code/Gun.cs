@@ -23,11 +23,11 @@ public sealed class Gun : Component
 	{
 		if ( ShotSound is not null )
 		{
-			Sound.Play( ShotSound, Scene.Camera.Transform.Position );
+			Sound.Play( ShotSound, Scene.Camera.WorldPosition );
 		}
 		if ( BoltSound is not null )
 		{
-			Sound.Play( BoltSound, Scene.Camera.Transform.Position );
+			Sound.Play( BoltSound, Scene.Camera.WorldPosition );
 		}
 		var tr = Scene.Trace
 			.Ray( aimRay, 5000f )
@@ -40,7 +40,7 @@ public sealed class Gun : Component
 			breakable.Break();
 			if ( tr.GameObject.Tags.Has( "target" ) )
 			{
-				GameState.Instance.OnDuckShot( breakable.Transform.Position );
+				GameState.Instance.OnDuckShot( breakable.WorldPosition );
 			}
 		}
 		else

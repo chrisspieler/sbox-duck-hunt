@@ -25,7 +25,7 @@ public sealed class Breakable : Component
 	{
 		if ( BreakSound is not null )
 		{
-			Sound.Play( BreakSound, Transform.Position );
+			Sound.Play( BreakSound, WorldPosition );
 		}
 		if ( BreakDebris is not null )
 		{

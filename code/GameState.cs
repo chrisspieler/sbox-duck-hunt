@@ -169,7 +169,7 @@ public sealed class GameState : Component
 	{
 		var floatingScore = FloatingScorePrefab.Clone( position );
 		floatingScore.Enabled = true;
-		floatingScore.Transform.Scale = scale;
+		floatingScore.WorldScale = scale;
 		var scoreText = floatingScore.Components.Get<FloatingScoreText>();
 		scoreText.Text = text;
 		scoreText.TextClass = textClass;

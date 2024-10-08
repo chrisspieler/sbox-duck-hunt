@@ -32,7 +32,7 @@ public partial class FloatingScoreText : PanelComponent
 		var currentProgress = MathX.LerpInverse( _floatStart, 0f, FloatAwayTime );
 		var easedProgress = Easing.QuadraticIn( currentProgress );
 		var currentHeight = MathX.Lerp( StartPosition.z, targetHeight, easedProgress );
-		Transform.Position = StartPosition
+		WorldPosition = StartPosition
 			.WithY( StartPosition.y + MathF.Sin( Time.Now * MathF.PI ) * SwayFactor )
 			.WithZ( currentHeight );
 		
