@@ -70,6 +70,7 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "02cd8bf2-cfac-480d-873d-88495e64bbe1",
+          "SkyIndirectLighting": true,
           "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
           "Tint": "1,1,1,1"
         }
@@ -1118,13 +1119,17 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.Prop",
-              "__guid": "62cebd49-efd0-4143-971a-eca1dc24bbfa",
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "2cb47c75-2513-40fb-909b-1cbb4185a3c5",
               "BodyGroups": 18446744073709551615,
-              "Health": 0,
-              "IsStatic": false,
               "Model": "models/sbox_props/shrubs/pine/pine_shrub_tall_a.vmdl",
-              "StartAsleep": false,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
               "Tint": "1,1,1,1"
             }
           ]
@@ -2635,8 +2640,7 @@
           "__version": 1,
           "ClipMapLodExtentTexels": 256,
           "ClipMapLodLevels": 6,
-          "DebugView": "None",
-          "EnableCollision": false,
+          "EnableCollision": true,
           "IsTrigger": false,
           "RenderType": "Off",
           "Static": true,
@@ -2855,6 +2859,7 @@
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 60,
     "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
