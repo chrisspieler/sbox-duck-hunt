@@ -6,6 +6,7 @@ public partial class Hud : PanelComponent, IBoonEvent
 	public string TimeRemaining => $"{GameState.Instance.GameTime:F0}";
 	public string ComboMultiplier => $"{GameState.Instance.ComboMultiplier:F2}x";
 
+	public bool IsBoonShopOpen { get; private set; }
 	private BoonList BoonPanel { get; set; }
 	private Panel Crosshair { get; set; }
 	private bool ShouldShowStartButton => GameState.Instance.CurrentSessionGameCount < 1 || _sinceGameOver > 1f;
@@ -41,6 +42,18 @@ public partial class Hud : PanelComponent, IBoonEvent
 
 		Crosshair.Style.Left = Length.Percent( normalizedMousePosition.x * 100f );
 		Crosshair.Style.Top = Length.Percent( normalizedMousePosition.y * 100f );
+	}
+
+	public void OpenBoonShop()
+	{
+		IsBoonShopOpen = true;
+		StateHasChanged();
+	}
+
+	public void CloseBoonShop()
+	{
+		IsBoonShopOpen = false;
+		StateHasChanged();
 	}
 
 	public void OnBoonsChanged()

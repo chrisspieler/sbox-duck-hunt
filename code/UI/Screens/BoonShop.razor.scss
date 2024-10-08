@@ -1,0 +1,55 @@
+﻿@import "../Style/_main.scss";
+
+BoonShop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.1s;
+
+    &:intro {
+        opacity: 0;
+    }
+
+    &:outro {
+        opacity: 0;
+    }
+
+    .shadow-box {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        background-color: #000D;
+    }
+
+    .main {
+        width: 80%;
+        height: 80%;
+        background-color: #000E;
+        border: 2px solid #FFFFFF02;
+        backdrop-filter: blur(10px);
+        border-radius: 25px 5px 25px 25px;
+
+        .header {
+            border-bottom: 2px solid #FFF6;
+            margin-bottom: 10px;
+
+            .title {
+                color: white;
+                font-family: Poppins;
+                font-size: 36px;
+            }
+
+            .button {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+
+                font-size: 32px;
+            }
+        }
+    }
+}

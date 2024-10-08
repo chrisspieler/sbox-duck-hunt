@@ -10,37 +10,14 @@ BoonList {
     font-size: 24px;
 
     > .header {
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid #FFF6;
         font-size: 36px;
         text-align: center;
+        align-items: center;
+        margin-bottom: 10px;
         
         > .button {
             margin: 5px 5px 5px 0px;
-        }
-
-        .button {
-            border: 1px solid #0001;
-            color: black;
-            background-color: white;
-            border-radius: 5px;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
-
-            &:hover {
-                border-color: #FFF1;
-                background-color: black;
-                color: white;
-            }
-
-            &:active {
-                transform: scale(0.98);
-                filter: brightness( 0.2 );
-            }
-
-            &.dark {
-                border-color: white;
-            }
         }
     }
 

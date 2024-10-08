@@ -1,9 +1,12 @@
 ﻿using Sandbox.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 public partial class BoonList : Panel
 {
+	public Action OnOpenBoonShop { get; set; }
+
 	private List<Boon> PurchasedBoons { get; set; } = new();
 
 	protected override void OnAfterTreeRender( bool firstTime )
@@ -24,6 +27,6 @@ public partial class BoonList : Panel
 
 	private void OpenBoonShop()
 	{
-
+		OnOpenBoonShop?.Invoke();
 	}
 }

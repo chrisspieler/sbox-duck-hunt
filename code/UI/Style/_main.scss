@@ -1,5 +1,30 @@
 ﻿@import "_tailwind.scss";
 
+.button {
+    border: 1px solid #0001;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+    &:hover {
+        border-color: #FFF1;
+        background-color: black;
+        color: white;
+    }
+
+    &:active {
+        transform: scale(0.98);
+        filter: brightness( 0.2 );
+    }
+
+    &.dark {
+        border-color: white;
+    }
+}
+
 .material-icon {
     font-family: 'Material Icons';
 }
