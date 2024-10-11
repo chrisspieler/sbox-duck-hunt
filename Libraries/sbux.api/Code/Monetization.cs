@@ -1,5 +1,4 @@
 using Sandbox.Diagnostics;
-using Sandbox.UI;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
@@ -10,13 +9,13 @@ namespace Sandbox.Services;
 public static class Monetization
 {
 	[ConVar( "sbux", Help = "Your s&bux balance.", Saved = true )]
-	private static string _balance { get; set; }
+	public static string Balance { get; private set; }
 
 	private static List<string> _gamePass { get; set; }
 
 	private const string URL = "https://sbux.party/";
 
-	private static async Task<string> Identification() => $"?steamid={Game.SteamId}&token={await Auth.GetToken( "sbux" )}&ident={Game.Ident}&balance={_balance}";
+	private static async Task<string> Identification() => $"?steamid={Game.SteamId}&token={await Auth.GetToken( "sbux" )}&ident={Game.Ident}&balance={Balance}";
 
 	private static readonly Task Loading;
 
@@ -30,7 +29,7 @@ public static class Monetization
 			{
 				var result = JsonNode.Parse( await response.Content.ReadAsStringAsync() );
 
-				_balance = result?["balance"].Deserialize<string>() ?? "0";
+				Balance = result?["balance"].Deserialize<string>() ?? "0";
 				_gamePass = result?["gamepass"].Deserialize<List<string>>() ?? new List<string>();
 			}
 		}

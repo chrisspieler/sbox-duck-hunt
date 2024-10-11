@@ -1,6 +1,6 @@
 {
   "IsOneTimePurchase": true,
-  "Description": "Reduces the firing rate of your gun without any noticeable increase in performance.",
+  "Description": "Reduces the firing rate of your gun.",
   "Ident": "gun_slow",
   "Cost": 15,
   "Title": "Cold Fingers",

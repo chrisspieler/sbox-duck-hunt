@@ -57,6 +57,27 @@ BoonShop {
                 font-size: 36px;
             }
 
+            #balanceArea {
+                padding: 10px;
+                width: 17.5%;
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 5px;
+                }
+
+                .balance {
+                    color: white;
+                    height: 100%;
+                    font-family: Roboto;
+                    font-size: 28px;
+                    border: 1px solid #FFF1;
+                    border-radius: 5px;
+                    background-color: #FFFFFF03;
+                    padding: 0px 5px;
+                }
+            }
+
             .button {
                 width: 50px;
                 height: 50px;
@@ -98,6 +119,7 @@ BoonShop {
                     width: 10%;
 
                     .price {
+                        margin-bottom: 5px;
 
                         .icon {
                             height: 24px;
@@ -107,6 +129,7 @@ BoonShop {
 
                         label {
                             font-size: 18px;
+                            font-family: Roboto;
                         }
                     }
 
