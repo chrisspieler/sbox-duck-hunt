@@ -1,5 +1,6 @@
 ﻿@import "_tailwind.scss";
 
+
 .button {
     border: 1px solid #0001;
     color: black;
@@ -8,20 +9,29 @@
     justify-content: center;
     align-items: center;
     padding: 5px;
+    width: 100px;
+    height: 40px;
 
-    &:hover {
-        border-color: #FFF1;
-        background-color: black;
-        color: white;
-    }
-
-    &:active {
-        transform: scale(0.98);
-        filter: brightness( 0.2 );
+    &.disabled {
+        pointer-events: none;
+        background-color: #AAAF;
     }
 
     &.dark {
         border-color: white;
+    }
+
+    &:not(.disabled) {
+        &:hover {
+            border-color: #FFF1;
+            background-color: black;
+            color: white;
+        }
+
+        &:active {
+            transform: scale(0.98);
+            filter: brightness( 0.2 );
+        }
     }
 }
 

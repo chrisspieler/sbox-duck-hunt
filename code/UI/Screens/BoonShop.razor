@@ -1,12 +1,45 @@
 ﻿@using Sandbox.UI;
 @inherits Panel
 
-<root class="justify-center items-center">
+<root class="justify-center items-center @RootClass">
+    @if ( PurchaseTask != null)
+    {
+        <div class="overlay blur"/>
+    }
     <div class="shadow-box"/>
     <div class="main flex-col">
-        <div class="header w-full">
+        <div class="header w-full shrink-0">
             <div class="title grow justify-center items-center">Boon Shop</div>
             <div class="button" onclick=@Close>X</div>
+        </div>
+        <div class="body w-full flex-col">
+            @foreach( var boon in AllBoons )
+            {
+                @for( int i = 0; i < 20; i++)
+                {
+                    <div class="boon items-center">
+                        <img class="thumbnail" src=@boon.Icon>
+                        <div class="info flex-col grow items-center">
+                            <label class="title">@boon.Title</label>
+                            <label class="description">@boon.Description</label>
+                        </div>
+                        <div id="buyArea" class="flex-col shrink-0 justify-content items-center">
+                            <div class="price">
+                                <img class="icon" src="ui/sbux_lg.png" />
+                                <label>@boon.Cost</label>
+                            </div>
+                            @if (Boon.Has(boon))
+                            {
+                                <div class="button disabled">Owned</div>
+                            }
+                            else
+                            {
+                                <div class="button" onclick=@( _ => BuyBoon( boon ) )>Purchase</div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
         </div>
     </div>
 </root>

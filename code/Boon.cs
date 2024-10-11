@@ -36,30 +36,19 @@ public class Boon : GamePass
 		return Debug ? DebugBoons.Contains( boon ) : boon.Has();
 	}
 
+	public static IEnumerable<Boon> GetAll()
+	{
+		return ResourceLibrary.GetAll<Boon>();
+	}
+
 	public static IEnumerable<Boon> GetPurchaseable()
 	{
-		var allBoons = ResourceLibrary.GetAll<Boon>();
-
-		foreach( var boon in allBoons )
-		{
-			if ( !boon.IsOneTimePurchase || !Has( boon ) )
-			{
-				yield return boon;
-			}
-		}
+		return GetAll().Where( b => !b.IsOneTimePurchase || !Has( b ) );
 	}
 
 	public static IEnumerable<Boon> GetOwned()
 	{
-		var allBoons = ResourceLibrary.GetAll<Boon>();
-
-		foreach( var boon in allBoons )
-		{
-			if ( Has( boon ) )
-			{
-				yield return boon;
-			}
-		}
+		return GetAll().Where( Has );
 	}
 
 	private static HashSet<Boon> DebugBoons { get; set; } = new();
