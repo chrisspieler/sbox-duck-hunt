@@ -136,7 +136,6 @@ public class Boon : GamePass
 		}
 
 		Log.Info( $"Clearing {DebugBoons.Count} debug boons." );
-		DebugBoons.Clear();
 		foreach( var boonName in _boonState.Keys )
 		{
 			if ( _boonState[boonName] )
@@ -144,6 +143,7 @@ public class Boon : GamePass
 				Disable( boonName );
 			}
 		}
+		DebugBoons.Clear();
 		_boonState.Clear();
 		RaiseBoonsChanged();
 	}
@@ -183,6 +183,15 @@ public class Boon : GamePass
 	public static void Disable( string boonName )
 	{
 		SetEnabledState( boonName, false );
+	}
+	
+	internal static void InitializeBoonStates()
+	{
+		_boonState.Clear();
+		foreach( var boon in GetOwned() )
+		{
+			_boonState[boon.ResourceName] = false;
+		}
 	}
 
 	public static bool GetEnabledState( string boonName )

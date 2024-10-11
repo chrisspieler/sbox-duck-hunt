@@ -46,6 +46,7 @@ public sealed class GameState : Component
 	{
 		_launchers = Scene.GetAllComponents<Launcher>().ToList();
 		OfflineStats = DuckStats.Load();
+		Boon.InitializeBoonStates();
 	}
 
 	protected override void OnUpdate()
