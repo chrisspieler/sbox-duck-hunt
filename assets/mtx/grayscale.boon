@@ -1,0 +1,125 @@
+{
+  "IsOneTimePurchase": true,
+  "Description": "Return to the golden age of film.",
+  "OnGameStart": null,
+  "OnEnabled": {
+    "__version": 8,
+    "__guid": "88acb504-2016-40ce-ba52-2c4d3ad2abe6",
+    "__changeId": 11,
+    "UserData": {
+      "Title": "On Enabled",
+      "ReferencedComponentTypes": []
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "scene.get.inscene",
+        "Properties": {
+          "T": "Sandbox.ColorAdjustments"
+        },
+        "UserData": {
+          "Position": "-96,72"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "Saturation",
+          "_type": "Sandbox.ColorAdjustments"
+        },
+        "UserData": {
+          "Position": "204,-0"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 2,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "Id": 6,
+        "Value": 0,
+        "DstId": 2,
+        "DstName": "_value"
+      }
+    ]
+  },
+  "OnDisabled": {
+    "__version": 8,
+    "__guid": "74ea84e9-4f0c-44a5-8316-ec8bf7e6a9f1",
+    "__changeId": 10,
+    "UserData": {
+      "Title": "On Disabled",
+      "ReferencedComponentTypes": []
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "scene.get.inscene",
+        "Properties": {
+          "T": "Sandbox.ColorAdjustments"
+        },
+        "UserData": {
+          "Position": "-96,60"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "Saturation",
+          "_type": "Sandbox.ColorAdjustments"
+        },
+        "UserData": {
+          "Position": "204,-0"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 2,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "Id": 5,
+        "Value": 1.1,
+        "DstId": 2,
+        "DstName": "_value"
+      }
+    ]
+  },
+  "Ident": "grayscale",
+  "Cost": 15,
+  "Title": "Cinema Mode",
+  "Icon": "https://em-content.zobj.net/source/au-kddi/190/movie-camera_1f3a5.png",
+  "__references": [],
+  "__version": 0
+}

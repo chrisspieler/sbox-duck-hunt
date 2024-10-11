@@ -1,0 +1,125 @@
+{
+  "IsOneTimePurchase": true,
+  "Description": "The intended viewing experience.",
+  "OnGameStart": null,
+  "OnEnabled": {
+    "__version": 8,
+    "__guid": "1795ce2c-3273-4a33-8b28-cb73b04760f2",
+    "__changeId": 8,
+    "UserData": {
+      "Title": "On Enabled",
+      "ReferencedComponentTypes": []
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "scene.get.inscene",
+        "Properties": {
+          "T": "Sandbox.CameraComponent"
+        },
+        "UserData": {
+          "Position": "-48,60"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "Viewport",
+          "_type": "Sandbox.CameraComponent"
+        },
+        "UserData": {
+          "Position": "312,0"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 2,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "Id": 4,
+        "Value": "0.282,0,0.436,1",
+        "DstId": 2,
+        "DstName": "_value"
+      }
+    ]
+  },
+  "OnDisabled": {
+    "__version": 8,
+    "__guid": "918346bc-fa1a-4cb1-9c65-aabd7968ad1b",
+    "__changeId": 7,
+    "UserData": {
+      "Title": "On Disabled",
+      "ReferencedComponentTypes": []
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "scene.get.inscene",
+        "Properties": {
+          "T": "Sandbox.CameraComponent"
+        },
+        "UserData": {
+          "Position": "-60,96"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "Viewport",
+          "_type": "Sandbox.CameraComponent"
+        },
+        "UserData": {
+          "Position": "192,0"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 2,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "Id": 3,
+        "Value": "0,0,1,1",
+        "DstId": 2,
+        "DstName": "_value"
+      }
+    ]
+  },
+  "Ident": "tiktok",
+  "Cost": 15,
+  "Title": "TikTok Mode",
+  "Icon": "https://em-content.zobj.net/source/telegram/386/mobile-phone_1f4f1.webp",
+  "__references": [],
+  "__version": 0
+}

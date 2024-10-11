@@ -24,12 +24,7 @@
             "_type": "gameobject",
             "prefab": "prefabs/floatingscore.prefab"
           },
-          "GameHud": {
-            "_type": "component",
-            "component_id": "da7ad3fc-2949-430b-b40f-61d66e5ac934",
-            "go": "fca348b1-cb0a-4f1b-987c-cdc0245beca9",
-            "component_type": "Hud"
-          },
+          "GameHud": null,
           "MaxCombo": 5,
           "MaxGameTime": 60,
           "MaxLaunchDelay": 3.5,
@@ -40,7 +35,7 @@
     {
       "__guid": "fca348b1-cb0a-4f1b-987c-cdc0245beca9",
       "Flags": 0,
-      "Name": "Hud",
+      "Name": "Screen",
       "Position": "55.84595,84.01761,186.5111",
       "Enabled": true,
       "Components": [
@@ -52,10 +47,33 @@
           "Scale": 1,
           "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "11c96f25-8071-467c-a6a5-a32dc3b81ff3",
+          "Flags": 0,
+          "Name": "Hud",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Hud",
+              "__guid": "da7ad3fc-2949-430b-b40f-61d66e5ac934"
+            }
+          ]
         },
         {
-          "__type": "Hud",
-          "__guid": "da7ad3fc-2949-430b-b40f-61d66e5ac934"
+          "__guid": "1f525148-bfdc-4fcb-b7fd-2e213192a4a5",
+          "Flags": 0,
+          "Name": "TikTok",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TikTokOverlay",
+              "__guid": "9285b67a-33ff-4e72-ae98-cececcb8b25f",
+              "ShowBars": false
+            }
+          ]
         }
       ]
     },
