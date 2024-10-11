@@ -1,5 +1,6 @@
 ﻿using Sandbox;
 using Sandbox.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,6 +29,14 @@ public class Boon : GamePass
 	[Category( "Display Information" )]
 	public string Description { get; set; } = string.Empty;
 
+	[Category( "Behavior" )]
+	public Action OnGameStart { get; set; }
+	[Category( "Behavior" )]
+	public Action OnEnabled { get; set; }
+	[Category( "Behavior" )]
+	public Action OnDisabled { get; set; }
+
+
 	public static bool Has( Boon boon )
 	{
 		if ( !boon.IsValid() )
@@ -36,9 +45,20 @@ public class Boon : GamePass
 		return Debug ? DebugBoons.Contains( boon ) : boon.Has();
 	}
 
+	public static Boon Get( string resourceName )
+	{
+		return GetAll().FirstOrDefault( b => b.ResourceName == resourceName );
+	}
+
 	public static IEnumerable<Boon> GetAll()
 	{
 		return ResourceLibrary.GetAll<Boon>();
+	}
+
+	public static IEnumerable<Boon> GetEnabled()
+	{
+		return GetAll()
+			.Where( b => _boonState.ContainsKey( b.ResourceName ) && _boonState[b.ResourceName] );
 	}
 
 	public static IEnumerable<Boon> GetPurchaseable()
@@ -55,6 +75,10 @@ public class Boon : GamePass
 
 	private static void RaiseBoonsChanged()
 	{
+		if ( Debug )
+		{
+			Log.Info( "Boons changed." );
+		}
 		IBoonEvent.Post( x => x.OnBoonsChanged() );
 	}
 
@@ -72,6 +96,10 @@ public class Boon : GamePass
 			Log.Info( $"Adding {boons.Length} debug boons." );
 			foreach( var boon in boons )
 			{
+				if ( !_boonState.ContainsKey( boon.ResourceName ) )
+				{
+					_boonState[boon.ResourceName] = false;
+				}
 				DebugBoons.Add( boon );
 			}
 			RaiseBoonsChanged();
@@ -84,6 +112,10 @@ public class Boon : GamePass
 		if ( matchingBoon != null )
 		{
 			DebugBoons.Add( matchingBoon );
+			if ( !_boonState.ContainsKey( matchingBoon.ResourceName ) )
+			{
+				_boonState[matchingBoon.ResourceName] = false;
+			}
 			Log.Info( $"Add debug boon: {matchingBoon.ResourceName}" );
 			RaiseBoonsChanged();
 		}
@@ -105,11 +137,91 @@ public class Boon : GamePass
 
 		Log.Info( $"Clearing {DebugBoons.Count} debug boons." );
 		DebugBoons.Clear();
+		foreach( var boonName in _boonState.Keys )
+		{
+			if ( _boonState[boonName] )
+			{
+				Disable( boonName );
+			}
+		}
+		_boonState.Clear();
 		RaiseBoonsChanged();
+	}
+
+	private static Dictionary<string, bool> _boonState = new();
+
+	private static void OnBoonToggled( Boon boon, bool enabled )
+	{
+		if ( Debug )
+		{
+			Log.Info( $"Boon toggled: {boon.ResourceName} - {enabled}" );
+		}
+		if ( enabled )
+		{
+			boon.OnEnabled?.Invoke();
+		}
+		else
+		{
+			boon.OnDisabled?.Invoke();
+		}
+		IBoonEvent.Post( x => x.OnBoonToggled( boon, enabled ) );
+	}
+
+	[ConCmd("boon_toggle")]
+	public static void Toggle( string boonName )
+	{
+		SetEnabledState( boonName, !GetEnabledState( boonName ) );
+	}
+
+	[ConCmd("boon_enable")]
+	public static void Enable( string boonName )
+	{
+		SetEnabledState( boonName, true );
+	}
+
+	[ConCmd( "boon_disable" )]
+	public static void Disable( string boonName )
+	{
+		SetEnabledState( boonName, false );
+	}
+
+	public static bool GetEnabledState( string boonName )
+	{
+		if ( !_boonState.ContainsKey( boonName ) )
+			return false;
+
+		return _boonState[boonName];
+	}
+
+	public static void SetEnabledState( string boonName, bool enabled )
+	{
+		var boon = GetOwned()
+			.FirstOrDefault( b => b.ResourceName.ToLower() == boonName.ToLower() );
+
+		if ( !boon.IsValid() )
+		{
+			Log.Info( $"No boon found matching: {boonName}" );
+			return;
+		}
+
+		if ( !_boonState.ContainsKey( boonName ) )
+		{
+			_boonState[boonName] = enabled;
+			OnBoonToggled( boon, enabled );
+			return;
+		}
+
+		var changed = _boonState[boonName] != enabled;
+		_boonState[boonName] = enabled;
+		if ( changed )
+		{
+			OnBoonToggled( boon, enabled );
+		}
 	}
 }
 
 public interface IBoonEvent : ISceneEvent<IBoonEvent>
 {
 	void OnBoonsChanged();
+	void OnBoonToggled( Boon boon, bool enabled );
 }

@@ -4,13 +4,16 @@ public sealed class Gun : Component
 {
 	[Property] public SoundEvent ShotSound { get; set; }
 	[Property] public SoundEvent BoltSound { get; set; }
-	[Property] public float FireRate { get; set; } = 1f;
+	[Property] public float FireDelay { get; set; } = 0.4f;
 	[Property] public float HitRadius { get; set; } = 5f;
+
+	public float FireDelayScale { get; set; } = 1f;
 
 	private TimeSince _lastFireTime = float.PositiveInfinity;
 	protected override void OnUpdate()
 	{
-		if ( _lastFireTime > FireRate && Input.Pressed("attack1") )
+		var fireDelay = FireDelay * FireDelayScale;
+		if ( _lastFireTime > fireDelay && Input.Pressed("attack1") )
 		{
 			
 			var fireRay = Scene.Camera.ScreenPixelToRay( Mouse.Position );

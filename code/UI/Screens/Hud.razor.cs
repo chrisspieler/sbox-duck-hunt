@@ -63,4 +63,12 @@ public partial class Hud : PanelComponent, IBoonEvent
 			BoonPanel.RefreshBoonList();
 		}
 	}
+
+	public void OnBoonToggled( Boon boon, bool enabled )
+	{
+		if ( BoonPanel.IsValid() )
+		{
+			BoonPanel.RefreshBoonList();
+		}
+	}
 }

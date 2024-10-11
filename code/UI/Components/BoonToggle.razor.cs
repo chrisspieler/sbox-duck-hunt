@@ -1,5 +1,4 @@
 ﻿using Sandbox;
-using Sandbox.Services;
 using Sandbox.UI;
 
 public partial class BoonToggle : Panel
@@ -33,7 +32,12 @@ public partial class BoonToggle : Panel
 			return;
 		}
 
-		Toggle.OnValueChanged += v => _value = v;
-		_value = Monetization.Has( Boon );
+		Toggle.Value = Boon.GetEnabledState( Boon.ResourceName );
+		_value = Toggle.Value;
+		Toggle.OnValueChanged += v =>
+		{
+			_value = v;
+			Boon.SetEnabledState( Boon.ResourceName, v );
+		};
 	}
 }

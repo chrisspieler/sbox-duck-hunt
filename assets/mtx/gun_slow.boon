@@ -1,6 +1,121 @@
 {
   "IsOneTimePurchase": true,
   "Description": "Reduces the firing rate of your gun.",
+  "OnGameStart": {
+    "__version": 8,
+    "__guid": "308395d1-ffa4-4aa1-9748-f6e4a0e265c2",
+    "__changeId": 19,
+    "UserData": {
+      "Title": "On Game Start",
+      "ReferencedComponentTypes": []
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "scene.get.inscene",
+        "Properties": {
+          "T": "Gun"
+        },
+        "UserData": {
+          "Position": "-12,60"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "FireDelayScale",
+          "_type": "Gun"
+        },
+        "UserData": {
+          "Position": "252,-0"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 2,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "Id": 12,
+        "Value": 2.25,
+        "DstId": 2,
+        "DstName": "_value"
+      }
+    ]
+  },
+  "OnEnabled": null,
+  "OnDisabled": {
+    "__version": 8,
+    "__guid": "81dd3817-b1d4-4891-9581-ff4f3704c870",
+    "__changeId": 7,
+    "UserData": {
+      "Title": "On Disabled",
+      "ReferencedComponentTypes": []
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "scene.get.inscene",
+        "Properties": {
+          "T": "Gun"
+        },
+        "UserData": {
+          "Position": "-24,84"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "FireDelayScale",
+          "_type": "Gun"
+        },
+        "UserData": {
+          "Position": "216,0"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 2,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "Id": 3,
+        "Value": 1,
+        "DstId": 2,
+        "DstName": "_value"
+      }
+    ]
+  },
   "Ident": "gun_slow",
   "Cost": 15,
   "Title": "Cold Fingers",

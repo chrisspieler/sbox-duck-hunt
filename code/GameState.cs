@@ -86,6 +86,10 @@ public sealed class GameState : Component
 		ShotsFired = 0;
 		MissedShots = 0;
 		_nextLaunch = Game.Random.Float( MinLaunchDelay, MaxLaunchDelay );
+		foreach( var boon in Boon.GetEnabled() )
+		{
+			boon.OnGameStart?.Invoke();
+		}
 		GameStarted?.Invoke();
 	}
 

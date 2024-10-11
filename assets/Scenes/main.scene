@@ -12,7 +12,7 @@
           "__type": "Gun",
           "__guid": "a5d8c16e-40e8-4e98-ab4f-450f5557feb2",
           "BoltSound": "sfx/mosin_bolt.sound",
-          "FireRate": 0.4,
+          "FireDelay": 0.4,
           "HitRadius": 5,
           "ShotSound": "sfx/mosin_shot.sound"
         },
@@ -2913,6 +2913,5 @@
     "rust.bush_large_spread#25051",
     "rust.bush_willow_b#25047"
   ],
-  "IsValid": true,
   "__version": 1
 }
