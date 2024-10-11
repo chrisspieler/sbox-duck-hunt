@@ -51,8 +51,17 @@ public partial class BoonShop : Panel
 
 		Log.Info( $"Purchasing boon: {boon?.ResourcePath}" );
 
-		PurchaseTask = Monetization.Purchase( boon );
-		await PurchaseTask;
+		try
+		{
+			PurchaseTask = Monetization.Purchase( boon );
+			await PurchaseTask;
+		}
+		catch ( Exception ex )
+		{
+			Log.Info( $"Exception purchasing s&bux: {ex.Message}" );
+			PurchaseTask = null;
+			return;
+		}
 		IBoonEvent.Post( x => x.OnBoonsChanged() );
 		PurchaseTask = null;
 	}
