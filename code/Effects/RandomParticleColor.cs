@@ -6,6 +6,7 @@ public sealed class RandomParticleColor : Component
 {
 	[Property] public ParticleEffect Effect { get; set; }
 	[Property] public List<Color> ColorList { get; set; } = new();
+	[Property] public RangedFloat HueRange { get; set; }
 
 	protected override void OnStart()
 	{
@@ -23,6 +24,7 @@ public sealed class RandomParticleColor : Component
 			return Game.Random.FromList( ColorList );
 		}
 
-		return Color.Random.ToHsv().WithValue( 1f ).WithSaturation( 0.85f );
+		var hue = HueRange.GetValue();
+		return new ColorHsv( hue, 0.9f, 0.75f );
 	}
 }

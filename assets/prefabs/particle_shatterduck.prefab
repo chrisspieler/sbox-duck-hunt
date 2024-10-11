@@ -212,7 +212,8 @@
               "component_id": "31b2cb1b-3e5a-4ca4-aaf9-b716deb5e10f",
               "go": "9b373d62-c404-4ecf-a55c-7f996d0d3fde",
               "component_type": "ParticleEffect"
-            }
+            },
+            "HueRange": "0 360"
           }
         ]
       }
@@ -225,6 +226,5 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [],
-  "IsValid": true,
   "__version": 1
 }
