@@ -53,6 +53,7 @@ public partial class BoonShop : Panel
 
 		PurchaseTask = Monetization.Purchase( boon );
 		await PurchaseTask;
+		IBoonEvent.Post( x => x.OnBoonsChanged() );
 		PurchaseTask = null;
 	}
 }

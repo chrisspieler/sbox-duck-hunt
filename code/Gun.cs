@@ -15,7 +15,6 @@ public sealed class Gun : Component
 		var fireDelay = FireDelay * FireDelayScale;
 		if ( _lastFireTime > fireDelay && Input.Pressed("attack1") )
 		{
-			
 			var fireRay = Scene.Camera.ScreenPixelToRay( Mouse.Position );
 			Fire( fireRay );
 			_lastFireTime = 0f;
