@@ -5,7 +5,7 @@
   "OnEnabled": {
     "__version": 8,
     "__guid": "1795ce2c-3273-4a33-8b28-cb73b04760f2",
-    "__changeId": 8,
+    "__changeId": 17,
     "UserData": {
       "Title": "On Enabled",
       "ReferencedComponentTypes": []
@@ -17,24 +17,24 @@
         "Type": "input"
       },
       {
-        "Id": 1,
+        "Id": 5,
         "Type": "scene.get.inscene",
         "Properties": {
-          "T": "Sandbox.CameraComponent"
+          "T": "TikTokOverlay"
         },
         "UserData": {
-          "Position": "-48,60"
+          "Position": "-72,60"
         }
       },
       {
-        "Id": 2,
+        "Id": 6,
         "Type": "property",
         "Properties": {
-          "_name": "Viewport",
-          "_type": "Sandbox.CameraComponent"
+          "_name": "ShowBars",
+          "_type": "TikTokOverlay"
         },
         "UserData": {
-          "Position": "312,0"
+          "Position": "204,-0"
         }
       }
     ],
@@ -42,19 +42,19 @@
       {
         "SrcId": 0,
         "SrcName": "_signal",
-        "DstId": 2,
+        "DstId": 6,
         "DstName": "_signal"
       },
       {
-        "SrcId": 1,
+        "SrcId": 5,
         "SrcName": "_result",
-        "DstId": 2,
+        "DstId": 6,
         "DstName": "_target"
       },
       {
-        "Id": 4,
-        "Value": "0.282,0,0.436,1",
-        "DstId": 2,
+        "Id": 7,
+        "Value": true,
+        "DstId": 6,
         "DstName": "_value"
       }
     ]
@@ -62,7 +62,7 @@
   "OnDisabled": {
     "__version": 8,
     "__guid": "918346bc-fa1a-4cb1-9c65-aabd7968ad1b",
-    "__changeId": 7,
+    "__changeId": 18,
     "UserData": {
       "Title": "On Disabled",
       "ReferencedComponentTypes": []
@@ -71,27 +71,30 @@
     "Nodes": [
       {
         "Id": 0,
-        "Type": "input"
-      },
-      {
-        "Id": 1,
-        "Type": "scene.get.inscene",
-        "Properties": {
-          "T": "Sandbox.CameraComponent"
-        },
+        "Type": "input",
         "UserData": {
-          "Position": "-60,96"
+          "Position": "0,-0"
         }
       },
       {
-        "Id": 2,
-        "Type": "property",
+        "Id": 5,
+        "Type": "scene.get.inscene",
         "Properties": {
-          "_name": "Viewport",
-          "_type": "Sandbox.CameraComponent"
+          "T": "TikTokOverlay"
         },
         "UserData": {
-          "Position": "192,0"
+          "Position": "-72,72"
+        }
+      },
+      {
+        "Id": 6,
+        "Type": "property",
+        "Properties": {
+          "_name": "ShowBars",
+          "_type": "TikTokOverlay"
+        },
+        "UserData": {
+          "Position": "204,0"
         }
       }
     ],
@@ -99,19 +102,19 @@
       {
         "SrcId": 0,
         "SrcName": "_signal",
-        "DstId": 2,
+        "DstId": 6,
         "DstName": "_signal"
       },
       {
-        "SrcId": 1,
+        "SrcId": 5,
         "SrcName": "_result",
-        "DstId": 2,
+        "DstId": 6,
         "DstName": "_target"
       },
       {
-        "Id": 3,
-        "Value": "0,0,1,1",
-        "DstId": 2,
+        "Id": 8,
+        "Value": false,
+        "DstId": 6,
         "DstName": "_value"
       }
     ]
