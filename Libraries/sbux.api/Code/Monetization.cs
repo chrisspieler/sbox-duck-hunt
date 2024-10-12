@@ -62,7 +62,7 @@ public static class Monetization
 	{
 		Assert.NotNull( gamePass );
 
-		return _gamePass.Contains( gamePass.Ident );
+		return _gamePass?.Contains( gamePass.Ident ) == true;
 	}
 
 	/// <summary>Prompts the player to purchase the game pass.</summary>
