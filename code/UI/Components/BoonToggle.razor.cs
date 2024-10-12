@@ -26,7 +26,7 @@ public partial class BoonToggle : Panel
 		if ( !firstTime )
 			return;
 
-		if ( !Boon.IsValid() || !Toggle.IsValid() )
+		if ( Boon is null || !Toggle.IsValid() )
 		{
 			Delete( true );
 			return;

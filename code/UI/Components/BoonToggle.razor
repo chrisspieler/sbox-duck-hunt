@@ -4,7 +4,7 @@
 @attribute [StyleSheet]
 
 <root class="justify-between items-center">
-    @if (!Boon.IsValid())
+    @if (Boon is null)
         return;
 
     <img src=@Boon.Icon id="boonIcon"/>

@@ -210,7 +210,7 @@ public class Boon : GamePass
 		var boon = GetOwned()
 			.FirstOrDefault( b => b.ResourceName.ToLower() == boonName.ToLower() );
 
-		if ( !boon.IsValid() )
+		if ( boon is null )
 		{
 			Log.Info( $"No boon found matching: {boonName}" );
 			return;
