@@ -40,7 +40,10 @@ public class Boon : GamePass
 	public static bool Has( Boon boon )
 	{
 		if ( !boon.IsValid() )
+		{
+			Log.Info( $"Invalid boon: {boon?.ResourcePath}" );
 			return false;
+		}
 
 		return Debug ? DebugBoons.Contains( boon ) : boon.Has();
 	}
