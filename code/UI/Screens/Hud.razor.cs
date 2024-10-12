@@ -1,5 +1,7 @@
 ﻿using Sandbox;
+using Sandbox.Services;
 using Sandbox.UI;
+using System.Threading.Tasks;
 
 public partial class Hud : PanelComponent, IBoonEvent
 {
@@ -23,6 +25,11 @@ public partial class Hud : PanelComponent, IBoonEvent
 		ShouldShowStartButton,
 		GameState.Instance.GotPersonalBestPoints
 	);
+
+	protected override async Task OnLoad()
+	{
+		await Monetization.WaitForLoad();
+	}
 
 	protected override void OnEnabled()
 	{
