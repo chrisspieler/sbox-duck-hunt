@@ -23,6 +23,7 @@ public static class Monetization
 	{
 		try
 		{
+			Log.Info( $"Refreshing game passes." );
 			var response = await Http.RequestAsync( URL + await Identification() );
 
 			if ( response.IsSuccessStatusCode )
@@ -31,6 +32,11 @@ public static class Monetization
 
 				Balance = result?["balance"].Deserialize<string>() ?? "0";
 				_gamePass = result?["gamepass"].Deserialize<List<string>>() ?? new List<string>();
+			}
+			Log.Info( $"Loaded {_gamePass.Count} game passes." );
+			foreach( var gamePass in _gamePass )
+			{
+				Log.Info( $"Game Pass: {gamePass}" );
 			}
 		}
 		catch ( Exception e )
