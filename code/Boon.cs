@@ -39,9 +39,9 @@ public class Boon : GamePass
 
 	public static bool Has( Boon boon )
 	{
-		if ( !boon.IsValid() )
+		if ( boon is null )
 		{
-			Log.Info( $"Invalid boon: {boon?.ResourcePath}" );
+			Log.Info( $"Null boon: {boon?.ResourcePath}" );
 			return false;
 		}
 
