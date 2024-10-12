@@ -160,7 +160,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 13,
+        "Id": 18,
         "Value": 180,
         "DstId": 10,
         "DstName": "roll"
@@ -337,7 +337,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 24,
+        "Id": 22,
         "Value": 0,
         "DstId": 19,
         "DstName": "roll"
@@ -357,7 +357,7 @@
     ]
   },
   "Ident": "australia",
-  "Cost": 15,
+  "Cost": 1,
   "Title": "Australia Mode",
   "Icon": "https://em-content.zobj.net/source/twitter/408/boomerang_1fa83.png",
   "__references": [],

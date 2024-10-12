@@ -51,7 +51,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 12,
+        "Id": 4,
         "Value": 2.25,
         "DstId": 2,
         "DstName": "_value"
@@ -109,7 +109,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 3,
+        "Id": 4,
         "Value": 1,
         "DstId": 2,
         "DstName": "_value"
@@ -117,7 +117,7 @@
     ]
   },
   "Ident": "gun_slow",
-  "Cost": 15,
+  "Cost": 5,
   "Title": "Cold Fingers",
   "Icon": "https://em-content.zobj.net/source/apple/391/snowflake_2744-fe0f.png",
   "__references": [],

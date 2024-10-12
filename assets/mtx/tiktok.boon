@@ -52,7 +52,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 7,
+        "Id": 8,
         "Value": true,
         "DstId": 6,
         "DstName": "_value"
@@ -120,7 +120,7 @@
     ]
   },
   "Ident": "tiktok",
-  "Cost": 15,
+  "Cost": 5,
   "Title": "TikTok Mode",
   "Icon": "https://em-content.zobj.net/source/telegram/386/mobile-phone_1f4f1.webp",
   "__references": [],

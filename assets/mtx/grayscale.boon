@@ -52,7 +52,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 6,
+        "Id": 4,
         "Value": 0,
         "DstId": 2,
         "DstName": "_value"
@@ -109,7 +109,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 5,
+        "Id": 4,
         "Value": 1.1,
         "DstId": 2,
         "DstName": "_value"
@@ -117,7 +117,7 @@
     ]
   },
   "Ident": "grayscale",
-  "Cost": 15,
+  "Cost": 10,
   "Title": "Cinema Mode",
   "Icon": "https://em-content.zobj.net/source/au-kddi/190/movie-camera_1f3a5.png",
   "__references": [],
