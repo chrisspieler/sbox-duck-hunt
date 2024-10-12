@@ -29,6 +29,7 @@ public partial class Hud : PanelComponent, IBoonEvent
 	protected override async Task OnLoad()
 	{
 		await Monetization.WaitForLoad();
+		IBoonEvent.Post( x => x.OnBoonsChanged() );
 	}
 
 	protected override void OnEnabled()
