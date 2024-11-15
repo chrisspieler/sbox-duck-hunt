@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-[GameResource( "Boon", "boon", "A game pass with additional information specific to Ducc Hunt", Icon = "emoji_events")]
+[GameResource( "Boon", "boon", "A game pass with additional information specific to Ducc Hunt", Icon = "emoji_events", Category = "s&bux")]
 public class Boon : GamePass
 {
 	[ConVar("boon_debug")] 
