@@ -54,8 +54,6 @@ public sealed class GameState : Component
 		if ( !IsGameActive )
 			return;
 
-		Mouse.CursorType = "crosshair";
-
 		if ( Input.EscapePressed )
 		{
 			GameTime = 0f;
