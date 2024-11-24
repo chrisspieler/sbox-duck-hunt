@@ -27,6 +27,12 @@
           "__type": "Gun",
           "__guid": "a5d8c16e-40e8-4e98-ab4f-450f5557feb2",
           "BoltSound": "sfx/mosin_bolt.sound",
+          "CrosshairDotScale": 1,
+          "CrosshairFireMarginJump": 8,
+          "CrosshairLineLengthScale": 1,
+          "CrosshairLineWidthScale": 1,
+          "CrosshairMarginScale": 1,
+          "CrosshairScale": 1,
           "FireDelay": 0.4,
           "HitRadius": 5,
           "ShotSound": "sfx/mosin_shot.sound"
@@ -174,7 +180,7 @@
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 30000,
-          "ZNear": 5
+          "ZNear": 1
         },
         {
           "__type": "Sandbox.Tonemapping",
@@ -193,8 +199,10 @@
           "__type": "Sandbox.Bloom",
           "__guid": "11fee56f-98c4-4c2d-81c6-991df3c7dc09",
           "BloomColor": {
+            "blend": "Linear",
             "color": [
               {
+                "t": 0,
                 "c": "1,1,1,1"
               },
               {
@@ -206,11 +214,18 @@
           },
           "BloomCurve": [
             {
-              "y": 0.5
+              "x": 0,
+              "y": 0.5,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
             },
             {
               "x": 1,
-              "y": 1
+              "y": 1,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
             }
           ],
           "Mode": "Additive",
@@ -2867,8 +2882,10 @@
           "__type": "Sandbox.Bloom",
           "__guid": "aa989121-325b-434a-8b8d-03ce32c8fc60",
           "BloomColor": {
+            "blend": "Linear",
             "color": [
               {
+                "t": 0,
                 "c": "1,1,1,1"
               },
               {
@@ -2880,11 +2897,18 @@
           },
           "BloomCurve": [
             {
-              "y": 0.5
+              "x": 0,
+              "y": 0.5,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
             },
             {
               "x": 1,
-              "y": 1
+              "y": 1,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
             }
           ],
           "Mode": "Additive",
@@ -2987,12 +3011,18 @@
           "DistanceAttenuationOverride": false,
           "Falloff": [
             {
+              "x": 0,
               "y": 1,
               "in": 3.1415927,
-              "out": -3.1415927
+              "out": -3.1415927,
+              "mode": "Mirrored"
             },
             {
-              "x": 1
+              "x": 1,
+              "y": 0,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
             }
           ],
           "Force2d": false,
